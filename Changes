@@ -1,0 +1,71 @@
+Revision history for Dist-Zilla-PluginBundle-Author-Plicease
+
+0.92      2013-05-02 13:07:08 EST5EDT
+  - add [ACPS::RPM]
+
+0.91      2013-03-20 22:16:10 America/New_York
+
+0.90      2013-03-01 11:15:12 America/New_York
+  - fix spacing problem in minted Changes
+  - added prereq Dist::Zilla::MintingProfile::Clustericious
+
+0.89      2013-02-22 15:19:59 America/New_York
+  - added [ModuleBuildDatabase]
+
+0.88      2013-01-18 20:52:38 America/New_York
+  - fixed test use.t to not use removed .pm files
+
+0.87      2013-01-15 17:12:36 America/New_York
+  - moved a couple of plugins from template into bundle
+
+0.86      2013-01-15 17:04:05 America/New_York
+  - remove scripts that aren't used anymore
+
+0.85      2012-12-26 14:25:33 America/New_York
+  - added [Author::Plicease::Inc]
+  - added [Author::Plicease::OSPrereqsNot]
+  - added [Run::BeforeBuild]
+
+0.84      2012-12-26 11:50:13 America/New_York
+  - added [CSS::Compressor]
+  - added [JavaScript::Minifier]
+  - added [Template::Tiny]
+
+0.83      2012-10-26 15:39:02 EST5EDT
+
+0.82      2012-10-26 07:59:20 EST5EDT
+  - modified default plugins to match what I am using now
+  - added [MinimumPerl] as prereq
+  - added [MakeMaker::Custom] as prereq
+  - added Test::CPAN::Changes as prereq
+
+0.81      2012-10-18 00:08:03 EST5EDT
+  - use Shell::Guess instead of System::Shell::Detect
+
+0.8       2012-10-10 08:54:47 EST5EDT
+  - include META.json
+
+0.7       2012-10-03 17:51:16 America/New_York
+
+0.6       2012-10-02 15:12:10 America/New_York
+  - use OurPkgVersion when [@Author::Plicease] is used
+
+0.5       2012-10-02 15:07:25 America/New_York
+  - use OurPkgVersion for Dist::Zilla
+
+0.4       2012-08-29 08:01:22 America/New_York
+  - add xt/release tests to skel
+  - update xt/release tests from profile
+  - Removed use test for devdoc
+  - Don't use [ExtraTests]
+
+0.3       2012-08-12 15:36:35 America/New_York
+  - Remove dep on IO::File::Closure.  Use Path::Class instead.
+  - Remove devdoc (it wasn't really working right anyway)
+
+0.2       2012-08-11 13:13:39 America/New_York
+  - Fix deps on [GitHub]
+  - Allow dirty README.pod
+
+0.1       2012-07-30 22:51:14 EST5EDT
+  - initial version

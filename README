@@ -1,0 +1,52 @@
+NAME
+    Dist::Zilla::PluginBundle::Author::Plicease - Dist::Zilla plugin bundle
+    used by Plicease
+
+VERSION
+    version 0.92
+
+SYNOPSIS
+    In your dist.ini:
+
+     [@Author::Plicease]
+
+DESCRIPTION
+    This Dist::Zilla plugin bundle is the equivalent to
+
+     [@Filter]
+     -bundle = @Basic
+     -remove = UploadToCPAN
+     -remove = Readme
+     -remove = ExtraTests
+
+     [PodWeaver]
+     [NextRelease]
+     [AutoPrereqs]
+     [OurPkgVersion]
+     [MetaJSON]
+
+     [@Git]
+     allow_dirty = dist.ini
+     allow_dirty = Changes
+     allow_dirty = README.pod
+
+     [AutoMetaResources]
+     bugtracker.github = user:plicease
+     repository.github = user:plicease
+     homepage = http://perl.wdlabs.com/%{dist}/
+ 
+     [InstallGuide]
+     [MinimumPerl]
+
+SEE ALSO
+    Author::Plicease::Init, MintingProfile::Plicease
+
+AUTHOR
+    Graham Ollis <perl@cpan.org>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2012 by Graham Ollis.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
