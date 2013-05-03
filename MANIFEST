@@ -7,7 +7,7 @@ META.yml
 Makefile.PL
 README
 dist.ini
-lib/Dist/Zilla/MintingProfile/Plicease.pm
+lib/Dist/Zilla/MintingProfile/Author/Plicease.pm
 lib/Dist/Zilla/Plugin/Author/Plicease/Inc.pm
 lib/Dist/Zilla/Plugin/Author/Plicease/Init.pm
 lib/Dist/Zilla/Plugin/Author/Plicease/OSPrereqsNot.pm

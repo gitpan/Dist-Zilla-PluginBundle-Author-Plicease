@@ -5,7 +5,7 @@ use v5.10;
 use Dist::Zilla;
 
 # ABSTRACT: Dist::Zilla plugin bundle used by Plicease
-our $VERSION = '0.92'; # VERSION
+our $VERSION = '0.93'; # VERSION
 
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -56,7 +56,6 @@ __PACKAGE__->meta->make_immutable;
 1;
 
 __END__
-
 =pod
 
 =head1 NAME
@@ -65,7 +64,7 @@ Dist::Zilla::PluginBundle::Author::Plicease - Dist::Zilla plugin bundle used by 
 
 =head1 VERSION
 
-version 0.92
+version 0.93
 
 =head1 SYNOPSIS
 
@@ -119,3 +118,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+

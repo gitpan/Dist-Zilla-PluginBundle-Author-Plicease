@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use File::Spec;
 
-our $VERSION = '0.92'; # VERSION
+our $VERSION = '0.93'; # VERSION
 # ABSTRACT: Include the inc directory to find plugins
 
 use lib File::Spec->catdir(File::Spec->curdir(), 'inc');
@@ -17,7 +17,6 @@ sub register_component { return; }
 1;
 
 __END__
-
 =pod
 
 =head1 NAME
@@ -26,7 +25,7 @@ Dist::Zilla::Plugin::Author::Plicease::Inc - Include the inc directory to find p
 
 =head1 VERSION
 
-version 0.92
+version 0.93
 
 =head1 AUTHOR
 
@@ -40,3 +39,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+

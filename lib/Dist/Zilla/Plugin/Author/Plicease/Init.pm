@@ -4,7 +4,7 @@ use Moose;
 use v5.10;
 
 # ABSTRACT: Dist::Zizilla initalization tasks for Plicease
-our $VERSION = '0.92'; # VERSION
+our $VERSION = '0.93'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterMint';
@@ -22,8 +22,8 @@ __PACKAGE__->meta->make_immutable;
 
 1;
 
-__END__
 
+__END__
 =pod
 
 =head1 NAME
@@ -32,7 +32,7 @@ Dist::Zilla::Plugin::Author::Plicease::Init - Dist::Zizilla initalization tasks 
 
 =head1 VERSION
 
-version 0.92
+version 0.93
 
 =head1 SYNOPSIS
 
@@ -64,3 +64,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+

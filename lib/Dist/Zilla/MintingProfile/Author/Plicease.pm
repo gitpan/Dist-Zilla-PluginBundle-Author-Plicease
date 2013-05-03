@@ -1,10 +1,10 @@
-package Dist::Zilla::MintingProfile::Plicease;
+package Dist::Zilla::MintingProfile::Author::Plicease;
 
 use Moose;
 use v5.10;
 
 # ABSTRACT: Minting profile for Plicease
-our $VERSION = '0.92'; # VERSION
+our $VERSION = '0.93'; # VERSION
 
 
 with qw( Dist::Zilla::Role::MintingProfile::ShareDir );
@@ -14,21 +14,21 @@ __PACKAGE__->meta->make_immutable;
 
 1;
 
-__END__
 
+__END__
 =pod
 
 =head1 NAME
 
-Dist::Zilla::MintingProfile::Plicease - Minting profile for Plicease
+Dist::Zilla::MintingProfile::Author::Plicease - Minting profile for Plicease
 
 =head1 VERSION
 
-version 0.92
+version 0.93
 
 =head1 SYNOPSIS
 
- dzil new -P Plicease Module::Name
+ dzil new -P Author::Plicease Module::Name
 
 =head1 DESCRIPTION
 
@@ -46,3 +46,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+

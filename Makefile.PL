@@ -7,13 +7,15 @@ use 5.010000;
 use ExtUtils::MakeMaker 6.30;
 
 use File::ShareDir::Install;
-install_share module => "Dist::Zilla::MintingProfile::Plicease", "profiles";
+install_share module => "Dist::Zilla::MintingProfile::Author::Plicease", "profiles";
 
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Dist::Zilla plugin bundle used by Plicease",
   "AUTHOR" => "Graham Ollis <perl\@cpan.org>",
-  "BUILD_REQUIRES" => {},
+  "BUILD_REQUIRES" => {
+    "Test::More" => 0
+  },
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30",
     "File::ShareDir::Install" => "0.03"
@@ -25,6 +27,7 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Dist::Zilla" => 0,
     "Dist::Zilla::MintingProfile::Clustericious" => 0,
+    "Dist::Zilla::MintingProfile::Plicease" => 0,
     "Dist::Zilla::Plugin::AutoMetaResources" => 0,
     "Dist::Zilla::Plugin::AutoPrereqs" => 0,
     "Dist::Zilla::Plugin::CSS::Compressor" => 0,
@@ -61,28 +64,12 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "TEST_REQUIRES" => {
-    "Test::More" => 0
-  },
-  "VERSION" => "0.92",
+  "VERSION" => "0.93",
   "test" => {
     "TESTS" => "t/*.t"
   }
 );
 
-
-unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
-  my $tr = delete $WriteMakefileArgs{TEST_REQUIRES};
-  my $br = $WriteMakefileArgs{BUILD_REQUIRES};
-  for my $mod ( keys %$tr ) {
-    if ( exists $br->{$mod} ) {
-      $br->{$mod} = $tr->{$mod} if $tr->{$mod} > $br->{$mod};
-    }
-    else {
-      $br->{$mod} = $tr->{$mod};
-    }
-  }
-}
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
   my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
