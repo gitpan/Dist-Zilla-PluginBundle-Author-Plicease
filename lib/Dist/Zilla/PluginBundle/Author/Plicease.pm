@@ -5,7 +5,7 @@ use v5.10;
 use Dist::Zilla;
 
 # ABSTRACT: Dist::Zilla plugin bundle used by Plicease
-our $VERSION = '0.93'; # VERSION
+our $VERSION = '0.94'; # VERSION
 
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -18,7 +18,7 @@ sub configure
 
   $self->add_bundle('Filter' => {
     -bundle => '@Basic',
-    -remove => [ qw( UploadToCPAN Readme ExtraTests ) ],
+    -remove => [ qw( UploadToCPAN Readme ExtraTests ConfirmRelease ) ],
   });
 
   $self->add_plugins(qw(
@@ -43,10 +43,14 @@ sub configure
     }
   ]);
 
+  $self->add_plugins('Author::Plicease::Tests')
+    if $self->payload->{release_tests};
+    
   $self->add_plugins(qw(
 
     InstallGuide
     MinimumPerl
+    ConfirmRelease
 
   ));
 }
@@ -56,6 +60,7 @@ __PACKAGE__->meta->make_immutable;
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -64,7 +69,7 @@ Dist::Zilla::PluginBundle::Author::Plicease - Dist::Zilla plugin bundle used by 
 
 =head1 VERSION
 
-version 0.93
+version 0.94
 
 =head1 SYNOPSIS
 
@@ -81,6 +86,7 @@ This Dist::Zilla plugin bundle is the equivalent to
  -remove = UploadToCPAN
  -remove = Readme
  -remove = ExtraTests
+ -remove = ConfirmRelease
 
  [PodWeaver]
  [NextRelease]
@@ -100,11 +106,12 @@ This Dist::Zilla plugin bundle is the equivalent to
  
  [InstallGuide]
  [MinimumPerl]
+ [ConfirmRelease]
 
 =head1 SEE ALSO
 
 L<Author::Plicease::Init|Dist::Zilla::Plugin::Author::Plicease::Init>,
-L<MintingProfile::Plicease|Dist::Zilla::MintingProfile::Plicease>
+L<MintingProfile::Plicease|Dist::Zilla::MintingProfile::Author::Plicease>
 
 =head1 AUTHOR
 
@@ -118,4 +125,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

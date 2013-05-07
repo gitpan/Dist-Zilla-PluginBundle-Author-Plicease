@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Plugin::Author::Plicease::OSPrereqsNot;
 # ABSTRACT: List prereqs conditional on operating system
-our $VERSION = '0.93'; # VERSION
+our $VERSION = '0.94'; # VERSION
 
 use Moose;
 use List::AllUtils 'first';
@@ -133,7 +133,7 @@ no Moose;
 __PACKAGE__->meta->make_immutable(inline_constructor => 1);
 1;
 
-
+__END__
 
 =pod
 
@@ -143,7 +143,7 @@ Dist::Zilla::Plugin::Author::Plicease::OSPrereqsNot - List prereqs conditional o
 
 =head1 VERSION
 
-version 0.93
+version 0.94
 
 =for Pod::Coverage setup_installer metadata
 
@@ -187,8 +187,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
-
-__END__
-
-

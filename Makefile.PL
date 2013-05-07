@@ -13,9 +13,7 @@ install_share module => "Dist::Zilla::MintingProfile::Author::Plicease", "profil
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Dist::Zilla plugin bundle used by Plicease",
   "AUTHOR" => "Graham Ollis <perl\@cpan.org>",
-  "BUILD_REQUIRES" => {
-    "Test::More" => 0
-  },
+  "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30",
     "File::ShareDir::Install" => "0.03"
@@ -27,7 +25,6 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Dist::Zilla" => 0,
     "Dist::Zilla::MintingProfile::Clustericious" => 0,
-    "Dist::Zilla::MintingProfile::Plicease" => 0,
     "Dist::Zilla::Plugin::AutoMetaResources" => 0,
     "Dist::Zilla::Plugin::AutoPrereqs" => 0,
     "Dist::Zilla::Plugin::CSS::Compressor" => 0,
@@ -50,12 +47,14 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::PluginBundle::Git" => 0,
     "Dist::Zilla::Role::AfterMint" => 0,
     "Dist::Zilla::Role::BeforeBuild" => 0,
+    "Dist::Zilla::Role::BeforeRelease" => 0,
     "Dist::Zilla::Role::InstallTool" => 0,
     "Dist::Zilla::Role::MetaProvider" => 0,
     "Dist::Zilla::Role::MintingProfile::ShareDir" => 0,
     "Dist::Zilla::Role::PluginBundle::Easy" => 0,
     "File::Path" => 0,
     "File::Spec" => 0,
+    "File::chdir" => 0,
     "List::AllUtils" => 0,
     "Moose" => 0,
     "Test::CPAN::Changes" => 0,
@@ -64,12 +63,28 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.93",
+  "TEST_REQUIRES" => {
+    "Test::More" => 0
+  },
+  "VERSION" => "0.94",
   "test" => {
     "TESTS" => "t/*.t"
   }
 );
 
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
+  my $tr = delete $WriteMakefileArgs{TEST_REQUIRES};
+  my $br = $WriteMakefileArgs{BUILD_REQUIRES};
+  for my $mod ( keys %$tr ) {
+    if ( exists $br->{$mod} ) {
+      $br->{$mod} = $tr->{$mod} if $tr->{$mod} > $br->{$mod};
+    }
+    else {
+      $br->{$mod} = $tr->{$mod};
+    }
+  }
+}
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
   my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
