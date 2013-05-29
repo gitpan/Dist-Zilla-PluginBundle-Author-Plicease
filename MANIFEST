@@ -10,12 +10,15 @@ dist.ini
 lib/Dist/Zilla/MintingProfile/Author/Plicease.pm
 lib/Dist/Zilla/Plugin/Author/Plicease/Inc.pm
 lib/Dist/Zilla/Plugin/Author/Plicease/Init.pm
+lib/Dist/Zilla/Plugin/Author/Plicease/Init2.pm
 lib/Dist/Zilla/Plugin/Author/Plicease/OSPrereqsNot.pm
 lib/Dist/Zilla/Plugin/Author/Plicease/Tests.pm
+lib/Dist/Zilla/Plugin/Author/Plicease/UploadToCPAN.pm
 lib/Dist/Zilla/PluginBundle/Author/Plicease.pm
 profiles/default/Module.pm
 profiles/default/plugins.ini
 profiles/default/profile.ini
+profiles/default/profile.ini.old
 profiles/default/skel/Changes
 profiles/default/skel/t/use.t
 profiles/default/skel/xt/release/build_environment.t
