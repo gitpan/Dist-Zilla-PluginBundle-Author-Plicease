@@ -3,8 +3,8 @@ package Dist::Zilla::Plugin::Author::Plicease::Init;
 use Moose;
 use v5.10;
 
-# ABSTRACT: Dist::Zizilla initalization tasks for Plicease
-our $VERSION = '0.96'; # VERSION
+# ABSTRACT: Dist::Zilla initialization tasks for Plicease
+our $VERSION = '0.97'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterMint';
@@ -28,11 +28,11 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Author::Plicease::Init - Dist::Zizilla initalization tasks for Plicease
+Dist::Zilla::Plugin::Author::Plicease::Init - Dist::Zilla initialization tasks for Plicease
 
 =head1 VERSION
 
-version 0.96
+version 0.97
 
 =head1 SYNOPSIS
 

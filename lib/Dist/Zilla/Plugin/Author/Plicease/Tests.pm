@@ -7,8 +7,8 @@ use File::chdir;
 use File::Path qw( make_path );
 use Dist::Zilla::MintingProfile::Author::Plicease;
 
-# ABSTRACT: add author only relese tests to xt/release
-our $VERSION = '0.96'; # VERSION
+# ABSTRACT: add author only release tests to xt/release
+our $VERSION = '0.97'; # VERSION
 
 
 with 'Dist::Zilla::Role::BeforeBuild';
@@ -61,6 +61,24 @@ sub before_build
       $file->openw->print($t_file->slurp);
     }
   }
+  
+  my $t_config = $self->zilla->root->file(qw( xt release release.yml ));
+  unless(-e $t_config)
+  {
+    $self->log("creating " . $t_config->stringify);
+    $t_config->openw->print(<<EOF);
+---
+pod_spelling_system:
+  # list of words that are spelled correctly
+  # (regardless of what spell check thinks)
+  stop_words: []
+
+pod_coverage:
+  # format is "Class#method" or "Class", regex allowed
+  # for either Class or method.
+  private: []
+EOF
+  }
 }
 
 sub test
@@ -78,11 +96,11 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Author::Plicease::Tests - add author only relese tests to xt/release
+Dist::Zilla::Plugin::Author::Plicease::Tests - add author only release tests to xt/release
 
 =head1 VERSION
 
-version 0.96
+version 0.97
 
 =head1 SYNOPSIS
 

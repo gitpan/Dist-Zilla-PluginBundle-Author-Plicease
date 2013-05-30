@@ -7,8 +7,8 @@ use Dist::Zilla::File::FromCode;
 use Dist::Zilla::MintingProfile::Author::Plicease;
 use JSON qw( to_json );
 
-# ABSTRACT: Dist::Zilla initalization tasks for Plicease
-our $VERSION = '0.96'; # VERSION
+# ABSTRACT: Dist::Zilla initialization tasks for Plicease
+our $VERSION = '0.97'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterMint';
@@ -176,7 +176,7 @@ sub gather_file_gitignore
   
   my $file = Dist::Zilla::File::InMemory->new({
     name    => '.gitignore',
-    content => "/$name-*",
+    content => "/$name-*\n/.build\n",
   });
   
   $self->add_file($file);
@@ -259,15 +259,15 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Author::Plicease::Init2 - Dist::Zilla initalization tasks for Plicease
+Dist::Zilla::Plugin::Author::Plicease::Init2 - Dist::Zilla initialization tasks for Plicease
 
 =head1 VERSION
 
-version 0.96
+version 0.97
 
 =head1 DESCRIPTION
 
-Fillout a dist in plicease style.
+Create a dist in plicease style.
 
 =head1 AUTHOR
 
