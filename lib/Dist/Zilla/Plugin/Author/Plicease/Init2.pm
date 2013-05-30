@@ -8,7 +8,7 @@ use Dist::Zilla::MintingProfile::Author::Plicease;
 use JSON qw( to_json );
 
 # ABSTRACT: Dist::Zilla initalization tasks for Plicease
-our $VERSION = '0.95'; # VERSION
+our $VERSION = '0.96'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterMint';
@@ -263,7 +263,7 @@ Dist::Zilla::Plugin::Author::Plicease::Init2 - Dist::Zilla initalization tasks f
 
 =head1 VERSION
 
-version 0.95
+version 0.96
 
 =head1 DESCRIPTION
 

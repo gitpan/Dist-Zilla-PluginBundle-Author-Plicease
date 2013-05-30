@@ -47,13 +47,13 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::PluginBundle::Git" => 0,
     "Dist::Zilla::Role::AfterMint" => 0,
     "Dist::Zilla::Role::BeforeBuild" => 0,
-    "Dist::Zilla::Role::BeforeRelease" => 0,
     "Dist::Zilla::Role::FileGatherer" => 0,
     "Dist::Zilla::Role::InstallTool" => 0,
     "Dist::Zilla::Role::MetaProvider" => 0,
     "Dist::Zilla::Role::MintingProfile::ShareDir" => 0,
     "Dist::Zilla::Role::ModuleMaker" => 0,
     "Dist::Zilla::Role::PluginBundle::Easy" => 0,
+    "Dist::Zilla::Role::TestRunner" => 0,
     "File::Path" => 0,
     "File::Spec" => 0,
     "File::chdir" => 0,
@@ -69,7 +69,7 @@ my %WriteMakefileArgs = (
   "TEST_REQUIRES" => {
     "Test::More" => 0
   },
-  "VERSION" => "0.95",
+  "VERSION" => "0.96",
   "test" => {
     "TESTS" => "t/*.t"
   }

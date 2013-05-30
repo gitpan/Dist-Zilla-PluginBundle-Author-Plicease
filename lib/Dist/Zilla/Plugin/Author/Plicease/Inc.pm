@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use File::Spec;
 
-our $VERSION = '0.95'; # VERSION
+our $VERSION = '0.96'; # VERSION
 # ABSTRACT: Include the inc directory to find plugins
 
 use lib File::Spec->catdir(File::Spec->curdir(), 'inc');
@@ -26,7 +26,7 @@ Dist::Zilla::Plugin::Author::Plicease::Inc - Include the inc directory to find p
 
 =head1 VERSION
 
-version 0.95
+version 0.96
 
 =head1 AUTHOR
 

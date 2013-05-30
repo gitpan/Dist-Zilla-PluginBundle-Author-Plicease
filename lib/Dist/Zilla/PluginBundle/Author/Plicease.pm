@@ -5,7 +5,7 @@ use v5.10;
 use Dist::Zilla;
 
 # ABSTRACT: Dist::Zilla plugin bundle used by Plicease
-our $VERSION = '0.95'; # VERSION
+our $VERSION = '0.96'; # VERSION
 
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -69,7 +69,7 @@ Dist::Zilla::PluginBundle::Author::Plicease - Dist::Zilla plugin bundle used by 
 
 =head1 VERSION
 
-version 0.95
+version 0.96
 
 =head1 SYNOPSIS
 
