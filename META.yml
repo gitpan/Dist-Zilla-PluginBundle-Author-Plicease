@@ -64,4 +64,4 @@ resources:
   bugtracker: https://github.com/plicease/dist-zilla-pluginbundle-author-plicease/issues
   homepage: http://perl.wdlabs.com/Dist-Zilla-PluginBundle-Author-Plicease/
   repository: git://github.com/plicease/dist-zilla-pluginbundle-author-plicease.git
-version: 0.98
+version: 0.99

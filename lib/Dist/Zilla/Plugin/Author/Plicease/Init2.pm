@@ -8,7 +8,7 @@ use Dist::Zilla::MintingProfile::Author::Plicease;
 use JSON qw( to_json );
 
 # ABSTRACT: Dist::Zilla initialization tasks for Plicease
-our $VERSION = '0.98'; # VERSION
+our $VERSION = '0.99'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterMint';
@@ -159,7 +159,7 @@ sub gather_files_tests
     name => 't/use.t',
     content => join("\n", q{use strict;},
                           q{use warnings;},
-                          q{use Test::More tests => 1},
+                          q{use Test::More tests => 1;},
                           q{},
                           qq{use_ok '$name';},
     ),
@@ -263,7 +263,7 @@ Dist::Zilla::Plugin::Author::Plicease::Init2 - Dist::Zilla initialization tasks 
 
 =head1 VERSION
 
-version 0.98
+version 0.99
 
 =head1 DESCRIPTION
 
