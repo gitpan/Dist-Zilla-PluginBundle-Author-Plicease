@@ -50,6 +50,7 @@
             "Dist::Zilla::Plugin::jQuery" : "0",
             "Dist::Zilla::PluginBundle::Git" : "0",
             "Dist::Zilla::Role::AfterMint" : "0",
+            "Dist::Zilla::Role::AfterRelease" : "0",
             "Dist::Zilla::Role::BeforeBuild" : "0",
             "Dist::Zilla::Role::FileGatherer" : "0",
             "Dist::Zilla::Role::InstallTool" : "0",
@@ -60,9 +61,11 @@
             "Dist::Zilla::Role::TestRunner" : "0",
             "File::Path" : "0",
             "File::chdir" : "0",
+            "IPC::System::Simple" : "0",
             "JSON" : "0",
             "List::AllUtils" : "0",
             "Moose" : "0",
+            "autodie" : "0",
             "bytes" : "0",
             "namespace::autoclean" : "0",
             "perl" : "v5.10.0",
@@ -89,6 +92,6 @@
          "web" : "https://github.com/plicease/dist-zilla-pluginbundle-author-plicease"
       }
    },
-   "version" : "0.99"
+   "version" : "1.00"
 }
 
