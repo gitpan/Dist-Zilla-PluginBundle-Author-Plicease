@@ -4,7 +4,7 @@ use Moose;
 use v5.10;
 
 # ABSTRACT: Dist::Zilla initialization tasks for Plicease
-our $VERSION = '1.01'; # VERSION
+our $VERSION = '1.02'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterMint';
@@ -32,7 +32,7 @@ Dist::Zilla::Plugin::Author::Plicease::Init - Dist::Zilla initialization tasks f
 
 =head1 VERSION
 
-version 1.01
+version 1.02
 
 =head1 SYNOPSIS
 
