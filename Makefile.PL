@@ -61,6 +61,7 @@ my %WriteMakefileArgs = (
     "JSON" => 0,
     "List::AllUtils" => 0,
     "Moose" => 0,
+    "YAML::XS" => 0,
     "autodie" => 0,
     "bytes" => 0,
     "namespace::autoclean" => 0,
@@ -71,7 +72,7 @@ my %WriteMakefileArgs = (
   "TEST_REQUIRES" => {
     "Test::More" => 0
   },
-  "VERSION" => "1.02",
+  "VERSION" => "1.03",
   "test" => {
     "TESTS" => "t/*.t"
   }

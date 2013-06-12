@@ -3,7 +3,7 @@ NAME
     used by Plicease
 
 VERSION
-    version 1.02
+    version 1.03
 
 SYNOPSIS
     In your dist.ini:
@@ -13,12 +13,18 @@ SYNOPSIS
 DESCRIPTION
     This Dist::Zilla plugin bundle is the equivalent to
 
-     [@Filter]
-     -bundle = @Basic
-     -remove = UploadToCPAN
-     -remove = Readme
-     -remove = ExtraTests
-     -remove = ConfirmRelease
+     # Basic - UploadToCPAN, Readme, ExtraTests, and ConfirmRelease
+     [GatherDir]
+     [PruneCruft]
+     except = .travis.yml
+     [ManifestSkip]
+     [MetaYAML]
+     [License]
+     [ExecDir]
+     [ShareDir]
+     [MakeMaker]
+     [Manifest]
+     [TestRelease]
 
      [PodWeaver]
      [NextRelease]
@@ -35,6 +41,8 @@ DESCRIPTION
      bugtracker.github = user:plicease
      repository.github = user:plicease
      homepage = http://perl.wdlabs.com/%{dist}/
+ 
+     [Author::Plicease::TransformTravis]
  
      [InstallGuide]
      [MinimumPerl]

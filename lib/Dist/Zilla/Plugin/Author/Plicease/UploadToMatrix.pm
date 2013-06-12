@@ -4,7 +4,7 @@ use Moose;
 use v5.10;
 
 # ABSTRACT: Upload dist to matrix
-our $VERSION = '1.02'; # VERSION
+our $VERSION = '1.03'; # VERSION
 
 with 'Dist::Zilla::Role::AfterRelease';
 
@@ -40,7 +40,7 @@ Dist::Zilla::Plugin::Author::Plicease::UploadToMatrix - Upload dist to matrix
 
 =head1 VERSION
 
-version 1.02
+version 1.03
 
 =head1 AUTHOR
 

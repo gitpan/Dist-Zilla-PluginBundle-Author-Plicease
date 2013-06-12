@@ -8,7 +8,7 @@ use Dist::Zilla::MintingProfile::Author::Plicease;
 use JSON qw( to_json );
 
 # ABSTRACT: Dist::Zilla initialization tasks for Plicease
-our $VERSION = '1.02'; # VERSION
+our $VERSION = '1.03'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterMint';
@@ -24,6 +24,15 @@ has abstract => (
   default => sub {
     my($self) = @_;
     $self->zilla->chrome->prompt_str("abstract");
+  },
+);
+
+has include_tests => (
+  is      => 'ro',
+  isa     => 'Int',
+  lazy    => 1,
+  default => sub {
+    shift->zilla->chrome->prompt_yn("include release tests?");
   },
 );
 
@@ -78,15 +87,11 @@ sub gather_file_travis_yml
                           q{perl:},
                           (map { "  - \"5.$_\""} qw( 10 12 14 16 18 )),
                           q{},
-                          q{#before_script:},
+                          q{#before_script: /bin/true},
                           q{},
                           q{script: HARNESS_IS_VERBOSE=1 prove -lv t xt},
                           q{},
-                          q{#after_script:},
-                          q{},
-                          q{branches:},
-                          q{  only:},
-                          q{    - master},
+                          q{#after_script: /bin/true},
                           q{},
     ),
   });
@@ -113,7 +118,7 @@ sub gather_file_dist_ini
     $content .= "\n";
     
     $content .= "[\@Author::Plicease]\n"
-             .  "release_tests = 1\n"
+             .  "release_tests = " . $self->include_tests ."\n"
              .  "\n";
     
     $content .= "[ReadmeAnyFromPod]\n"
@@ -174,7 +179,7 @@ sub gather_files_tests
 {
   my($self, $arg) = @_;
   
-  if($self->zilla->chrome->prompt_yn("include release tests?"))
+  if($self->include_tests)
   {
     my $source = Dist::Zilla::MintingProfile::Author::Plicease->profile_dir->subdir(qw( default skel xt release ));
     foreach my $test ($source->children)
@@ -298,7 +303,7 @@ Dist::Zilla::Plugin::Author::Plicease::Init2 - Dist::Zilla initialization tasks 
 
 =head1 VERSION
 
-version 1.02
+version 1.03
 
 =head1 DESCRIPTION
 

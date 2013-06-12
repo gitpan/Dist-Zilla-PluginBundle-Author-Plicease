@@ -65,6 +65,7 @@
             "JSON" : "0",
             "List::AllUtils" : "0",
             "Moose" : "0",
+            "YAML::XS" : "0",
             "autodie" : "0",
             "bytes" : "0",
             "namespace::autoclean" : "0",
@@ -92,6 +93,6 @@
          "web" : "https://github.com/plicease/dist-zilla-pluginbundle-author-plicease"
       }
    },
-   "version" : "1.02"
+   "version" : "1.03"
 }
 
