@@ -4,6 +4,10 @@ use Moose;
 with 'Dist::Zilla::Role::FileGatherer';
 use YAML::XS qw( Dump LoadFile );
 
+# ABSTRACT: transform .travis.yml so that it uses Module::Build or MakeMaker for deps
+our $VERSION = '1.04'; # VERSION
+
+
 use namespace::autoclean;
 
 sub gather_files
@@ -47,11 +51,15 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Author::Plicease::TransformTravis
+Dist::Zilla::Plugin::Author::Plicease::TransformTravis - transform .travis.yml so that it uses Module::Build or MakeMaker for deps
 
 =head1 VERSION
 
-version 1.03
+version 1.04
+
+=head1 SYNOPSIS
+
+ [Author::Plicease::TransformTravis]
 
 =head1 AUTHOR
 
