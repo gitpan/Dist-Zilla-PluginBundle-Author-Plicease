@@ -8,7 +8,7 @@ use Dist::Zilla::MintingProfile::Author::Plicease;
 use JSON qw( to_json );
 
 # ABSTRACT: Dist::Zilla initialization tasks for Plicease
-our $VERSION = '1.04'; # VERSION
+our $VERSION = '1.05'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterMint';
@@ -167,7 +167,7 @@ sub gather_file_changes
     name    => 'Changes',
     content => join("\n", q{Revision history for {{$dist->name}}},
                           q{},
-                          q{{{$NEXXT}}},
+                          q{{{$NEXT}}},
                           q{  - initial version},
     ),
   });
@@ -303,7 +303,7 @@ Dist::Zilla::Plugin::Author::Plicease::Init2 - Dist::Zilla initialization tasks 
 
 =head1 VERSION
 
-version 1.04
+version 1.05
 
 =head1 DESCRIPTION
 
