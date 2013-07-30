@@ -1,6 +1,29 @@
 Revision history for Dist-Zilla-PluginBundle-Author-Plicease
 
+1.14      2013-07-18 13:30:51 America/New_York
+  - add cpan option for [Author::Plicease::Upload]
+  - update init2 to reflect previous upload merge
+
+1.12      2013-07-18 09:11:35 America/New_York
+  - merge [Author::Plicease::UploadToCPAN] and [Author::Plicease::UploadToMatrix] into [Author::Plicease::Upload]
+
+1.11      2013-07-10 07:03:39 EST5EDT
+  - fix author section header in [Author::Plicease::Thanks]
+
+1.10      2013-07-10 06:48:50 EST5EDT
+  - add [Author::Plicease::Thanks]
+
+1.09      2013-06-22 09:47:47 EST5EDT
+  - add an installer option for [@Author::Plicease]
+
+1.08      2013-06-21 21:54:48 EST5EDT
+  - updated dep versions
+
+1.07      2013-06-19 18:12:53 EST5EDT
+  - added [Author::Plicease::PrePodWeaver]
+
 1.06      2013-06-19 09:27:36 EST5EDT
+  - require specific version of some plugins
 
 1.05      2013-06-16 12:56:21 America/New_York
   - Fixed typo in Changes template

@@ -4,7 +4,7 @@
       "Graham Ollis <perl@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560",
    "license" : [
       "perl_5"
    ],
@@ -15,7 +15,8 @@
    "name" : "Dist-Zilla-PluginBundle-Author-Plicease",
    "no_index" : {
       "directory" : [
-         "profiles"
+         "profiles",
+         "corpus"
       ]
    },
    "prereqs" : {
@@ -39,7 +40,7 @@
             "Dist::Zilla::Plugin::InstallGuide" : "0",
             "Dist::Zilla::Plugin::JavaScript::Minifier" : "0",
             "Dist::Zilla::Plugin::MinimumPerl" : "0",
-            "Dist::Zilla::Plugin::ModuleBuildDatabase" : "0.03",
+            "Dist::Zilla::Plugin::ModuleBuildDatabase" : "0.04",
             "Dist::Zilla::Plugin::NextRelease" : "0",
             "Dist::Zilla::Plugin::OurPkgVersion" : "0",
             "Dist::Zilla::Plugin::PodWeaver" : "0",
@@ -52,9 +53,10 @@
             "Dist::Zilla::PluginBundle::ACPS" : "0.25",
             "Dist::Zilla::PluginBundle::Git" : "0",
             "Dist::Zilla::Role::AfterMint" : "0",
-            "Dist::Zilla::Role::AfterRelease" : "0",
             "Dist::Zilla::Role::BeforeBuild" : "0",
+            "Dist::Zilla::Role::FileFinderUser" : "0",
             "Dist::Zilla::Role::FileGatherer" : "0",
+            "Dist::Zilla::Role::FileMunger" : "0",
             "Dist::Zilla::Role::InstallTool" : "0",
             "Dist::Zilla::Role::MetaProvider" : "0",
             "Dist::Zilla::Role::MintingProfile::ShareDir" : "0",
@@ -79,6 +81,7 @@
       },
       "test" : {
          "requires" : {
+            "Test::DZil" : "0",
             "Test::More" : "0"
          }
       }
@@ -95,6 +98,6 @@
          "web" : "https://github.com/plicease/dist-zilla-pluginbundle-author-plicease"
       }
    },
-   "version" : "1.06"
+   "version" : "1.14"
 }
 

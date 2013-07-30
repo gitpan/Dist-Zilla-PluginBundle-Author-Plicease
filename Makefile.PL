@@ -35,7 +35,7 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::Plugin::InstallGuide" => 0,
     "Dist::Zilla::Plugin::JavaScript::Minifier" => 0,
     "Dist::Zilla::Plugin::MinimumPerl" => 0,
-    "Dist::Zilla::Plugin::ModuleBuildDatabase" => "0.03",
+    "Dist::Zilla::Plugin::ModuleBuildDatabase" => "0.04",
     "Dist::Zilla::Plugin::NextRelease" => 0,
     "Dist::Zilla::Plugin::OurPkgVersion" => 0,
     "Dist::Zilla::Plugin::PodWeaver" => 0,
@@ -48,9 +48,10 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::PluginBundle::ACPS" => "0.25",
     "Dist::Zilla::PluginBundle::Git" => 0,
     "Dist::Zilla::Role::AfterMint" => 0,
-    "Dist::Zilla::Role::AfterRelease" => 0,
     "Dist::Zilla::Role::BeforeBuild" => 0,
+    "Dist::Zilla::Role::FileFinderUser" => 0,
     "Dist::Zilla::Role::FileGatherer" => 0,
+    "Dist::Zilla::Role::FileMunger" => 0,
     "Dist::Zilla::Role::InstallTool" => 0,
     "Dist::Zilla::Role::MetaProvider" => 0,
     "Dist::Zilla::Role::MintingProfile::ShareDir" => 0,
@@ -72,9 +73,10 @@ my %WriteMakefileArgs = (
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
+    "Test::DZil" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "1.06",
+  "VERSION" => "1.14",
   "test" => {
     "TESTS" => "t/*.t"
   }

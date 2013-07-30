@@ -5,7 +5,7 @@ use v5.10;
 use Dist::Zilla;
 
 # ABSTRACT: Dist::Zilla plugin bundle used by Plicease
-our $VERSION = '1.06'; # VERSION
+our $VERSION = '1.14'; # VERSION
 
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -24,7 +24,11 @@ sub configure
     'License',
     'ExecDir',
     'ShareDir',
-    'MakeMaker',
+  );
+  
+  $self->add_plugins($self->payload->{installer} // 'MakeMaker');
+  
+  $self->add_plugins(
     'Manifest',
     'TestRelease',
   );
@@ -32,6 +36,7 @@ sub configure
   
   $self->add_plugins(qw(
 
+    Author::Plicease::PrePodWeaver
     PodWeaver
     NextRelease
     AutoPrereqs
@@ -79,7 +84,7 @@ Dist::Zilla::PluginBundle::Author::Plicease - Dist::Zilla plugin bundle used by 
 
 =head1 VERSION
 
-version 1.06
+version 1.14
 
 =head1 SYNOPSIS
 
@@ -104,6 +109,7 @@ This Dist::Zilla plugin bundle is the equivalent to
  [Manifest]
  [TestRelease]
 
+ [Author::Plicease::PrePodWeaver]
  [PodWeaver]
  [NextRelease]
  [AutoPrereqs]
@@ -125,6 +131,15 @@ This Dist::Zilla plugin bundle is the equivalent to
  [InstallGuide]
  [MinimumPerl]
  [ConfirmRelease] 
+
+=head1 OPTIONS
+
+=head2 installer
+
+Specify an alternative to L<[MakeMaker]|Dist::Zilla::Plugin::MakeMaker>
+(L<[ModuleBuild]|Dist::Zilla::Plugin::ModuleBuild>,
+L<[ModuleBuildTiny]|Dist::Zilla::Plugin::ModuleBuildTiny>, or
+L<[ModuleBuildDatabase]|Dist::Zilla::Plugin::ModuleBuildDatabase> for example).
 
 =head1 SEE ALSO
 

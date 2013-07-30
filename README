@@ -3,7 +3,7 @@ NAME
     used by Plicease
 
 VERSION
-    version 1.06
+    version 1.14
 
 SYNOPSIS
     In your dist.ini:
@@ -26,6 +26,7 @@ DESCRIPTION
      [Manifest]
      [TestRelease]
 
+     [Author::Plicease::PrePodWeaver]
      [PodWeaver]
      [NextRelease]
      [AutoPrereqs]
@@ -47,6 +48,11 @@ DESCRIPTION
      [InstallGuide]
      [MinimumPerl]
      [ConfirmRelease]
+
+OPTIONS
+  installer
+    Specify an alternative to [MakeMaker] ([ModuleBuild], [ModuleBuildTiny],
+    or [ModuleBuildDatabase] for example).
 
 SEE ALSO
     Author::Plicease::Init, MintingProfile::Plicease

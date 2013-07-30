@@ -8,7 +8,7 @@ use Dist::Zilla::MintingProfile::Author::Plicease;
 use JSON qw( to_json );
 
 # ABSTRACT: Dist::Zilla initialization tasks for Plicease
-our $VERSION = '1.06'; # VERSION
+our $VERSION = '1.14'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterMint';
@@ -142,12 +142,9 @@ sub gather_file_dist_ini
              .  ";Foo::Bar = 0\n"
              .  "\n";
     
-    $content .= ";[Author::Plicease::UploadToCPAN]\n"
+    $content .= ";[Author::Plicease::Upload]\n"
              .  "\n";
              
-    $content .= ";[Author::Plicease::UploadToMatrix]\n"
-             .  "\n";
-
     $content;
   };
   
@@ -303,7 +300,7 @@ Dist::Zilla::Plugin::Author::Plicease::Init2 - Dist::Zilla initialization tasks 
 
 =head1 VERSION
 
-version 1.06
+version 1.14
 
 =head1 DESCRIPTION
 
