@@ -9,7 +9,7 @@ configure_requires:
   ExtUtils::MakeMaker: 6.30
   File::ShareDir::Install: 0.03
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560'
+generated_by: 'Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.132140'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -73,4 +73,4 @@ resources:
   bugtracker: https://github.com/plicease/dist-zilla-pluginbundle-author-plicease/issues
   homepage: http://perl.wdlabs.com/Dist-Zilla-PluginBundle-Author-Plicease/
   repository: git://github.com/plicease/dist-zilla-pluginbundle-author-plicease.git
-version: 1.14
+version: 1.15

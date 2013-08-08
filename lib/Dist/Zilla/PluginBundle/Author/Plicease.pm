@@ -5,7 +5,7 @@ use v5.10;
 use Dist::Zilla;
 
 # ABSTRACT: Dist::Zilla plugin bundle used by Plicease
-our $VERSION = '1.14'; # VERSION
+our $VERSION = '1.15'; # VERSION
 
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -38,7 +38,11 @@ sub configure
 
     Author::Plicease::PrePodWeaver
     PodWeaver
-    NextRelease
+  ));
+  
+  $self->add_plugins([ NextRelease => { format => '%-9v %{yyyy-MM-dd}dT%{HH:mm:ssZ}d' }]);
+    
+  $self->add_plugins(qw(
     AutoPrereqs
     OurPkgVersion
     MetaJSON
@@ -84,7 +88,7 @@ Dist::Zilla::PluginBundle::Author::Plicease - Dist::Zilla plugin bundle used by 
 
 =head1 VERSION
 
-version 1.14
+version 1.15
 
 =head1 SYNOPSIS
 
@@ -112,6 +116,7 @@ This Dist::Zilla plugin bundle is the equivalent to
  [Author::Plicease::PrePodWeaver]
  [PodWeaver]
  [NextRelease]
+ format = %-9v %{yyyy-MM-dd}dT%{HH:mm:ssZ}d
  [AutoPrereqs]
  [OurPkgVersion]
  [MetaJSON]

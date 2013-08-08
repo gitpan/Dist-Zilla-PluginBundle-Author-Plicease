@@ -3,7 +3,7 @@ NAME
     used by Plicease
 
 VERSION
-    version 1.14
+    version 1.15
 
 SYNOPSIS
     In your dist.ini:
@@ -29,6 +29,7 @@ DESCRIPTION
      [Author::Plicease::PrePodWeaver]
      [PodWeaver]
      [NextRelease]
+     format = %-9v %{yyyy-MM-dd}dT%{HH:mm:ssZ}d
      [AutoPrereqs]
      [OurPkgVersion]
      [MetaJSON]

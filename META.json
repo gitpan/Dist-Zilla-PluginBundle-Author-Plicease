@@ -4,7 +4,7 @@
       "Graham Ollis <perl@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560",
+   "generated_by" : "Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.132140",
    "license" : [
       "perl_5"
    ],
@@ -98,6 +98,6 @@
          "web" : "https://github.com/plicease/dist-zilla-pluginbundle-author-plicease"
       }
    },
-   "version" : "1.14"
+   "version" : "1.15"
 }
 
