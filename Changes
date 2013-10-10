@@ -1,6 +1,45 @@
 Revision history for Dist-Zilla-PluginBundle-Author-Plicease
 
-1.15      2013-08-08T16:01:30-0400
+1.27      2013-10-09 14:44:12 -0400
+  - add readme_from option to [@Author::Plicease]
+  - documentation
+
+1.26      2013-09-27 18:17:16 -0400
+  - rm dep on use bytes (that was bad)
+  - create t/00_diag.t and t/00_diag.txt as part of build
+  - add [Author::Plicease::Recommend] and use it by default
+
+1.25      2013-09-18 15:56:41 -0400
+  - add dep on [TextTabs]
+
+1.24      2013-09-10 06:41:12 -0400
+  - tweak the MarkDownCleanup module
+
+1.23      2013-09-09 20:20:02 -0400
+  - silence annoying warning
+
+1.22      2013-09-07 11:02:39 -0400
+  - remove extra space in markdown verbatim blocks
+
+1.21      2013-09-07 04:26:43 -0400
+  - strip the version out of the README.md
+
+1.20      2013-09-06 15:24:02 -0400
+  - add [Author::Plicease::MarkDownCleanup] to [@Author::Plicease]
+
+1.19      2013-09-06 15:08:16 -0400
+  - renamed [Author::Plicease::TravisStatus] [Author::Plicease::MarkDownCleanup]
+
+1.18      2013-09-06 14:56:09 -0400
+  - add [Author::Plicease::TravisStatus]
+
+1.17      2013-08-27 12:33:01 -0400
+  - update prereq plugins to latest versions
+
+1.16      2013-08-11 16:42:31 -0400
+  - tweak date format
+
+1.15      2013-08-08 16:01:30 -0400
   - use CPAN::Changes::Spec format for new entries in Changes
 
 1.14      2013-07-18 13:30:51 America/New_York

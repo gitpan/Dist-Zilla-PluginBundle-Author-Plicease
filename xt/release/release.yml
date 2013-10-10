@@ -9,9 +9,14 @@ pod_spelling_system:
     - deps
     - travis
     - yml
+    - ModuleBuild
     - ModuleBuildTiny
     - ModuleBuildDatabase
     - munge
+    - README
+    - Readme
+    - readme
+    - md
 
 pod_coverage:
   private:
@@ -21,6 +26,7 @@ pod_coverage:
     - Dist::Zilla::PluginBundle::Author::Plicease#configure
     - Dist::Zilla::Plugin::Author::Plicease::.*#after_mint
     - Dist::Zilla::Plugin::Author::Plicease::.*#before_build
+    - Dist::Zilla::Plugin::Author::Plicease::.*#after_build
     - Dist::Zilla::Plugin::Author::Plicease::.*#after_release
     - Dist::Zilla::Plugin::Author::Plicease::.*#make_module
     - Dist::Zilla::Plugin::Author::Plicease::.*#munge_file
@@ -28,4 +34,5 @@ pod_coverage:
     - Dist::Zilla::Plugin::Author::Plicease::.*#setup_installer
     - Dist::Zilla::Plugin::Author::Plicease::.*#test
     - Dist::Zilla::Plugin::Author::Plicease::.*#gather.*
+    - Dist::Zilla::Plugin::Author::Plicease::.*#register_prereqs
     - Dist::Zilla::Plugin::Author::Plicease::OSPrereqsNot#metadata

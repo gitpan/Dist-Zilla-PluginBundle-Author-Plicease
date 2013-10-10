@@ -9,7 +9,7 @@ configure_requires:
   ExtUtils::MakeMaker: 6.30
   File::ShareDir::Install: 0.03
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.132140'
+generated_by: 'Dist::Zilla version 4.300039, CPAN::Meta::Converter version 2.132661'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -30,20 +30,22 @@ requires:
   Dist::Zilla::Plugin::Git: 0
   Dist::Zilla::Plugin::InsertExample: 0.02
   Dist::Zilla::Plugin::InstallGuide: 0
-  Dist::Zilla::Plugin::JavaScript::Minifier: 0
+  Dist::Zilla::Plugin::JavaScript::Minifier: 0.01
   Dist::Zilla::Plugin::MinimumPerl: 0
-  Dist::Zilla::Plugin::ModuleBuildDatabase: 0.04
+  Dist::Zilla::Plugin::ModuleBuildDatabase: 0.05
   Dist::Zilla::Plugin::NextRelease: 0
   Dist::Zilla::Plugin::OurPkgVersion: 0
   Dist::Zilla::Plugin::PodWeaver: 0
   Dist::Zilla::Plugin::ReadmeAnyFromPod: 0
   Dist::Zilla::Plugin::Run::BeforeBuild: 0
   Dist::Zilla::Plugin::Template::Tiny: 0.03
+  Dist::Zilla::Plugin::TextTabs: 0.02
   Dist::Zilla::Plugin::TwitterBootstrap: 0.04
   Dist::Zilla::Plugin::UploadToCPAN: 0
   Dist::Zilla::Plugin::jQuery: 0.01
-  Dist::Zilla::PluginBundle::ACPS: 0.25
+  Dist::Zilla::PluginBundle::ACPS: 0.27
   Dist::Zilla::PluginBundle::Git: 0
+  Dist::Zilla::Role::AfterBuild: 0
   Dist::Zilla::Role::AfterMint: 0
   Dist::Zilla::Role::BeforeBuild: 0
   Dist::Zilla::Role::FileFinderUser: 0
@@ -54,16 +56,19 @@ requires:
   Dist::Zilla::Role::MintingProfile::ShareDir: 0
   Dist::Zilla::Role::ModuleMaker: 0
   Dist::Zilla::Role::PluginBundle::Easy: 0
+  Dist::Zilla::Role::PrereqSource: 0
   Dist::Zilla::Role::TestRunner: 0
+  Encode: 0
   File::Path: 0
   File::chdir: 0
   IPC::System::Simple: 0
   JSON: 0
   List::AllUtils: 0
   Moose: 0
+  Path::Class: 0.31
+  PerlX::Maybe: 0
   YAML::XS: 0
   autodie: 0
-  bytes: 0
   namespace::autoclean: 0
   perl: v5.10.0
   strict: 0
@@ -73,4 +78,4 @@ resources:
   bugtracker: https://github.com/plicease/dist-zilla-pluginbundle-author-plicease/issues
   homepage: http://perl.wdlabs.com/Dist-Zilla-PluginBundle-Author-Plicease/
   repository: git://github.com/plicease/dist-zilla-pluginbundle-author-plicease.git
-version: 1.15
+version: 1.27

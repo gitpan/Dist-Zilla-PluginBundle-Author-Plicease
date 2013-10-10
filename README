@@ -3,7 +3,7 @@ NAME
     used by Plicease
 
 VERSION
-    version 1.15
+    version 1.27
 
 SYNOPSIS
     In your dist.ini:
@@ -25,20 +25,20 @@ DESCRIPTION
      [MakeMaker]
      [Manifest]
      [TestRelease]
-
+ 
      [Author::Plicease::PrePodWeaver]
      [PodWeaver]
      [NextRelease]
-     format = %-9v %{yyyy-MM-dd}dT%{HH:mm:ssZ}d
+     format = %-9v %{yyyy-MM-dd HH:mm:ss Z}d
      [AutoPrereqs]
      [OurPkgVersion]
      [MetaJSON]
-
+ 
      [@Git]
      allow_dirty = dist.ini
      allow_dirty = Changes
-     allow_dirty = README.pod
-
+     allow_dirty = README.md
+ 
      [AutoMetaResources]
      bugtracker.github = user:plicease
      repository.github = user:plicease
@@ -48,12 +48,36 @@ DESCRIPTION
  
      [InstallGuide]
      [MinimumPerl]
-     [ConfirmRelease]
+     [ConfirmRelease] 
+ 
+     [ReadmeAnyFromPod]
+     type     = text
+     filename = README
+     location = build
+ 
+     [ReadmeAnyFromPod / ReadMePodInRoot]
+     type     = markdown
+     filename = README.md
+     location = root
+ 
+     [Author::Plicease::MarkDownCleanup]
+     [Author::Plicease::Recommend]
 
 OPTIONS
   installer
     Specify an alternative to [MakeMaker] ([ModuleBuild], [ModuleBuildTiny],
     or [ModuleBuildDatabase] for example).
+
+  readme_from
+    Which file to pull from for the Readme (must be POD format). If not
+    specified, then the main module will be used.
+
+  release_tests
+    If set to true, then include release tests when building.
+
+  travis_status
+    if set to true, then include a link to the travis build page in the
+    readme.
 
 SEE ALSO
     Author::Plicease::Init, MintingProfile::Plicease

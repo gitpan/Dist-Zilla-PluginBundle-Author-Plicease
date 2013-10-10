@@ -11,8 +11,10 @@ dist.ini
 lib/Dist/Zilla/MintingProfile/Author/Plicease.pm
 lib/Dist/Zilla/Plugin/Author/Plicease/Init.pm
 lib/Dist/Zilla/Plugin/Author/Plicease/Init2.pm
+lib/Dist/Zilla/Plugin/Author/Plicease/MarkDownCleanup.pm
 lib/Dist/Zilla/Plugin/Author/Plicease/OSPrereqsNot.pm
 lib/Dist/Zilla/Plugin/Author/Plicease/PrePodWeaver.pm
+lib/Dist/Zilla/Plugin/Author/Plicease/Recommend.pm
 lib/Dist/Zilla/Plugin/Author/Plicease/Tests.pm
 lib/Dist/Zilla/Plugin/Author/Plicease/Thanks.pm
 lib/Dist/Zilla/Plugin/Author/Plicease/TransformTravis.pm
@@ -23,6 +25,7 @@ profiles/default/plugins.ini
 profiles/default/profile.ini
 profiles/default/profile.ini.old
 profiles/default/skel/Changes
+profiles/default/skel/t/00_diag.t
 profiles/default/skel/t/use.t
 profiles/default/skel/xt/release/build_environment.t
 profiles/default/skel/xt/release/changes.t
@@ -35,6 +38,8 @@ profiles/default/skel/xt/release/pod_spelling_common.t
 profiles/default/skel/xt/release/pod_spelling_system.t
 profiles/default/skel/xt/release/release.yml
 profiles/default/skel/xt/release/strict.t
+t/00_diag.t
+t/00_diag.txt
 t/thanks1.t
 t/thanks2.t
 t/thanks3.t
@@ -44,6 +49,7 @@ xt/release/build_environment.t
 xt/release/changes.t
 xt/release/eol.t
 xt/release/fixme.t
+xt/release/modules.txt
 xt/release/no_tabs.t
 xt/release/pod.t
 xt/release/pod_coverage.t

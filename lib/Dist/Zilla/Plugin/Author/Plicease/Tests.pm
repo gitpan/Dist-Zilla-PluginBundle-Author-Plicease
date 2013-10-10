@@ -8,10 +8,11 @@ use File::Path qw( make_path );
 use Dist::Zilla::MintingProfile::Author::Plicease;
 
 # ABSTRACT: add author only release tests to xt/release
-our $VERSION = '1.15'; # VERSION
+our $VERSION = '1.27'; # VERSION
 
 
 with 'Dist::Zilla::Role::BeforeBuild';
+with 'Dist::Zilla::Role::InstallTool';
 with 'Dist::Zilla::Role::TestRunner';
 
 has source => (
@@ -79,6 +80,50 @@ pod_coverage:
   private: []
 EOF
   }
+
+  my $diag = $self->zilla->root->file(qw( t 00_diag.t ));
+  $diag->spew(scalar $source->parent->parent->file('t', '00_diag.t')->absolute->slurp);
+}
+
+# not really an installer, but we have to create a list
+# of the prereqs / suggested modules after the prereqs
+# have been calculated
+sub setup_installer
+{
+  my($self) = @_;
+  
+  my %list;
+  my $prereqs = $self->zilla->prereqs->as_string_hash;
+  foreach my $phase (keys %$prereqs)
+  {
+    foreach my $type (keys %{ $prereqs->{$phase} })
+    {
+      foreach my $module (keys %{ $prereqs->{$phase}->{$type} })
+      {
+        next if $module =~ /^(perl|strict|warnings|base)$/;
+        $list{$module}++;
+      }
+    }
+  }
+  
+  my $content = join "\n", sort keys %list;
+  $content .= "\n";
+  
+  $self->zilla->root->file('t', '00_diag.txt')->spew($content);
+  
+  my($file) = grep { $_->name eq 't/00_diag.txt' } @{ $self->zilla->files };
+  if($file)
+  {
+    $file->content($content);
+  }
+  else
+  {
+    $file = Dist::Zilla::File::InMemory->new({
+      name    => 't/00_diag.txt',
+      content => $content,
+    });
+    $self->add_file($file);
+  }
 }
 
 sub test
@@ -100,7 +145,7 @@ Dist::Zilla::Plugin::Author::Plicease::Tests - add author only release tests to 
 
 =head1 VERSION
 
-version 1.15
+version 1.27
 
 =head1 SYNOPSIS
 

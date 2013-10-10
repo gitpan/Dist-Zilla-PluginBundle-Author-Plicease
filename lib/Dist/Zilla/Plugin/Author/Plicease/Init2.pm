@@ -6,9 +6,10 @@ use Dist::Zilla::File::InMemory;
 use Dist::Zilla::File::FromCode;
 use Dist::Zilla::MintingProfile::Author::Plicease;
 use JSON qw( to_json );
+use Encode qw( encode_utf8 );
 
 # ABSTRACT: Dist::Zilla initialization tasks for Plicease
-our $VERSION = '1.15'; # VERSION
+our $VERSION = '1.27'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterMint';
@@ -119,18 +120,6 @@ sub gather_file_dist_ini
     
     $content .= "[\@Author::Plicease]\n"
              .  "release_tests = " . $self->include_tests ."\n"
-             .  "\n";
-    
-    $content .= "[ReadmeAnyFromPod]\n"
-             .  "type     = text\n"
-             .  "filename = README\n"
-             .  "location = build\n"
-             .  "\n";
-    
-    $content .= "[ReadmeAnyFromPod / ReadMePodInRoot]\n"
-             .  "type     = pod\n"
-             .  "filename = README.pod\n"
-             .  "location = root\n"
              .  "\n";
     
     $content .= "[RemovePrereqs]\n"
@@ -245,7 +234,6 @@ sub after_mint
   
   unless(eval q{ use Git::Wrapper; 1; })
   {
-    $DB::single = 1;
     $self->zilla->log("no Git::Wrapper, can't create repository");
     return;
   }
@@ -270,7 +258,7 @@ sub after_mint
     
     my $data = to_json({ name => $self->zilla->name, description => $self->abstract });
     $request->content($data);
-    do { use bytes; $request->header( 'Content-Length' => length $data ) };
+    $request->header( 'Content-Length' => length encode_utf8 $data );
     $request->authorization_basic($self->github_login, $self->github_pass);
     my $response = $ua->request($request);
     unless($response->is_success)
@@ -300,7 +288,7 @@ Dist::Zilla::Plugin::Author::Plicease::Init2 - Dist::Zilla initialization tasks 
 
 =head1 VERSION
 
-version 1.15
+version 1.27
 
 =head1 DESCRIPTION
 
