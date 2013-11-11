@@ -1,5 +1,30 @@
 Revision history for Dist-Zilla-PluginBundle-Author-Plicease
 
+1.34      2013-11-11 17:49:01 -0500
+  - [@Author::Plicease] alien_build_command and alien_install_command be mvp
+
+1.33      2013-11-07 12:03:21 -0500
+  - update version test
+
+1.32      2013-11-07 11:28:33 -0500
+  - support for [Alien] as the builder
+
+1.31      2013-10-16 03:34:17 -0400
+  - use [Bootstrap::lib] and relatives for release more consistent
+    with my other distros
+
+1.30      2013-10-15 11:54:55 -0400
+  - make xt/release/version.t less strict, so that test versions
+    (eg. 0.01_01) are allowed
+  - fix for the regex removing the version from README.md so that
+    it works for test versions (eg. 0.01_01)
+
+1.29      2013-10-14 14:57:46 -0400
+  - add xt/release/version.t to skel and distro
+
+1.28      2013-10-12 14:31:26 -0400
+  - use require instead of use in diagnostic
+
 1.27      2013-10-09 14:44:12 -0400
   - add readme_from option to [@Author::Plicease]
   - documentation

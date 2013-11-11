@@ -9,7 +9,7 @@ use JSON qw( to_json );
 use Encode qw( encode_utf8 );
 
 # ABSTRACT: Dist::Zilla initialization tasks for Plicease
-our $VERSION = '1.27'; # VERSION
+our $VERSION = '1.34'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterMint';
@@ -172,7 +172,7 @@ sub gather_files_tests
     {
       my $file = Dist::Zilla::File::FromCode->new({
         name => "xt/release/" . $test->basename,
-        code => sub { $test->slurp },
+        code => sub { $test->slurp(iomode => '<:encoding(UTF-8)') },
       });
       $self->add_file($file);
     }
@@ -282,13 +282,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Dist::Zilla::Plugin::Author::Plicease::Init2 - Dist::Zilla initialization tasks for Plicease
 
 =head1 VERSION
 
-version 1.27
+version 1.34
 
 =head1 DESCRIPTION
 

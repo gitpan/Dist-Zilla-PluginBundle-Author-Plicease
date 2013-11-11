@@ -27,6 +27,7 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::File::FromCode" => 0,
     "Dist::Zilla::File::InMemory" => 0,
     "Dist::Zilla::MintingProfile::Clustericious" => "0.02",
+    "Dist::Zilla::Plugin::Alien" => 0,
     "Dist::Zilla::Plugin::AutoMetaResources" => 0,
     "Dist::Zilla::Plugin::AutoPrereqs" => 0,
     "Dist::Zilla::Plugin::CSS::Compressor" => "0.01",
@@ -81,37 +82,77 @@ my %WriteMakefileArgs = (
     "Test::DZil" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "1.27",
+  "VERSION" => "1.34",
   "test" => {
     "TESTS" => "t/*.t"
   }
 );
 
 
-unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
-  my $tr = delete $WriteMakefileArgs{TEST_REQUIRES};
-  my $br = $WriteMakefileArgs{BUILD_REQUIRES};
-  for my $mod ( keys %$tr ) {
-    if ( exists $br->{$mod} ) {
-      $br->{$mod} = $tr->{$mod} if $tr->{$mod} > $br->{$mod};
-    }
-    else {
-      $br->{$mod} = $tr->{$mod};
-    }
-  }
-}
+my %FallbackPrereqs = (
+  "Dist::Zilla" => 0,
+  "Dist::Zilla::File::FromCode" => 0,
+  "Dist::Zilla::File::InMemory" => 0,
+  "Dist::Zilla::MintingProfile::Clustericious" => "0.02",
+  "Dist::Zilla::Plugin::Alien" => 0,
+  "Dist::Zilla::Plugin::AutoMetaResources" => 0,
+  "Dist::Zilla::Plugin::AutoPrereqs" => 0,
+  "Dist::Zilla::Plugin::CSS::Compressor" => "0.01",
+  "Dist::Zilla::Plugin::Git" => 0,
+  "Dist::Zilla::Plugin::InsertExample" => "0.02",
+  "Dist::Zilla::Plugin::InstallGuide" => 0,
+  "Dist::Zilla::Plugin::JavaScript::Minifier" => "0.01",
+  "Dist::Zilla::Plugin::MinimumPerl" => 0,
+  "Dist::Zilla::Plugin::ModuleBuildDatabase" => "0.05",
+  "Dist::Zilla::Plugin::NextRelease" => 0,
+  "Dist::Zilla::Plugin::OurPkgVersion" => 0,
+  "Dist::Zilla::Plugin::PodWeaver" => 0,
+  "Dist::Zilla::Plugin::ReadmeAnyFromPod" => 0,
+  "Dist::Zilla::Plugin::Run::BeforeBuild" => 0,
+  "Dist::Zilla::Plugin::Template::Tiny" => "0.03",
+  "Dist::Zilla::Plugin::TextTabs" => "0.02",
+  "Dist::Zilla::Plugin::TwitterBootstrap" => "0.04",
+  "Dist::Zilla::Plugin::UploadToCPAN" => 0,
+  "Dist::Zilla::Plugin::jQuery" => "0.01",
+  "Dist::Zilla::PluginBundle::ACPS" => "0.27",
+  "Dist::Zilla::PluginBundle::Git" => 0,
+  "Dist::Zilla::Role::AfterBuild" => 0,
+  "Dist::Zilla::Role::AfterMint" => 0,
+  "Dist::Zilla::Role::BeforeBuild" => 0,
+  "Dist::Zilla::Role::FileFinderUser" => 0,
+  "Dist::Zilla::Role::FileGatherer" => 0,
+  "Dist::Zilla::Role::FileMunger" => 0,
+  "Dist::Zilla::Role::InstallTool" => 0,
+  "Dist::Zilla::Role::MetaProvider" => 0,
+  "Dist::Zilla::Role::MintingProfile::ShareDir" => 0,
+  "Dist::Zilla::Role::ModuleMaker" => 0,
+  "Dist::Zilla::Role::PluginBundle::Easy" => 0,
+  "Dist::Zilla::Role::PrereqSource" => 0,
+  "Dist::Zilla::Role::TestRunner" => 0,
+  "Encode" => 0,
+  "File::Path" => 0,
+  "File::chdir" => 0,
+  "IPC::System::Simple" => 0,
+  "JSON" => 0,
+  "List::AllUtils" => 0,
+  "Moose" => 0,
+  "Path::Class" => "0.31",
+  "PerlX::Maybe" => 0,
+  "Test::DZil" => 0,
+  "Test::More" => 0,
+  "YAML::XS" => 0,
+  "autodie" => 0,
+  "namespace::autoclean" => 0,
+  "strict" => 0,
+  "utf8" => 0,
+  "warnings" => 0
+);
 
-unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
-  my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
-  my $pp = $WriteMakefileArgs{PREREQ_PM};
-  for my $mod ( keys %$br ) {
-    if ( exists $pp->{$mod} ) {
-      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
-    }
-    else {
-      $pp->{$mod} = $br->{$mod};
-    }
-  }
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
+  delete $WriteMakefileArgs{TEST_REQUIRES};
+  delete $WriteMakefileArgs{BUILD_REQUIRES};
+  $WriteMakefileArgs{PREREQ_PM} = \%FallbackPrereqs;
 }
 
 delete $WriteMakefileArgs{CONFIGURE_REQUIRES}

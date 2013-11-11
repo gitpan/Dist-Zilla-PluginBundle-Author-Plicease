@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Plugin::Author::Plicease::OSPrereqsNot;
 # ABSTRACT: List prerequisites conditional on operating system
-our $VERSION = '1.27'; # VERSION
+our $VERSION = '1.34'; # VERSION
 
 use Moose;
 use List::AllUtils 'first';
@@ -137,13 +137,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Dist::Zilla::Plugin::Author::Plicease::OSPrereqsNot - List prerequisites conditional on operating system
 
 =head1 VERSION
 
-version 1.27
+version 1.34
 
 =for Pod::Coverage setup_installer metadata
 
@@ -174,6 +176,8 @@ This plugin is a fairly gross hack, based on the technique used for
 changes how it generates install scripts.
 
 =end wikidoc
+
+=cut
 
 =head1 AUTHOR
 

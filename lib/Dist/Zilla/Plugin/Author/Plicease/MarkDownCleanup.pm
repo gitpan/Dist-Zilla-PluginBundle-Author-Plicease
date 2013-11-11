@@ -1,11 +1,14 @@
 package Dist::Zilla::Plugin::Author::Plicease::MarkDownCleanup;
 
+# TODO: this or parts of this may no longer be necessary as of
+# Pod::Markdown 1.400
+
 use strict;
 use warnings;
 use Moose;
 
 # ABSTRACT: add a travis status button to the README.md file
-our $VERSION = '1.27'; # VERSION
+our $VERSION = '1.34'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterBuild';
@@ -24,7 +27,7 @@ sub after_build
     my $status = $self->travis_status ? " [![Build Status](https://secure.travis-ci.org/plicease/$name.png)](http://travis-ci.org/plicease/$name)" : "";
     my $content = $readme->slurp;
     $content =~ s{# NAME\s+(.*?) - (.*?#)}{# $1$status\n\n$2}s;
-    $content =~ s{# VERSION\s+version (\d+\.|)\d+\.\d+(_\d+|)\s+#}{#};
+    $content =~ s{# VERSION\s+version (\d+\.|)\d+\.\d+(\\_\d+|)\s+#}{#};
     # do this twice because the pattern may overlap
     # TODO: this is not actually enough I think a fix to Pod::Markdown
     # or using a different converter all together may be required
@@ -44,13 +47,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Dist::Zilla::Plugin::Author::Plicease::MarkDownCleanup - add a travis status button to the README.md file
 
 =head1 VERSION
 
-version 1.27
+version 1.34
 
 =head1 SYNOPSIS
 

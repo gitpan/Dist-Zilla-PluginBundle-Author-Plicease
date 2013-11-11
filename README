@@ -3,7 +3,7 @@ NAME
     used by Plicease
 
 VERSION
-    version 1.27
+    version 1.34
 
 SYNOPSIS
     In your dist.ini:
@@ -67,6 +67,9 @@ OPTIONS
   installer
     Specify an alternative to [MakeMaker] ([ModuleBuild], [ModuleBuildTiny],
     or [ModuleBuildDatabase] for example).
+
+    If installer is Alien, then any options with the alien_ prefix will be
+    passed to Alien (minus the alien_ prefix).
 
   readme_from
     Which file to pull from for the Readme (must be POD format). If not

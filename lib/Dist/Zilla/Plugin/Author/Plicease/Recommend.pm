@@ -5,7 +5,7 @@ use warnings;
 use Moose;
 
 # ABSTRACT: make some obvious recommendations
-our $VERSION = '1.27'; # VERSION
+our $VERSION = '1.34'; # VERSION
 
 with 'Dist::Zilla::Role::PrereqSource';
 
@@ -46,13 +46,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Dist::Zilla::Plugin::Author::Plicease::Recommend - make some obvious recommendations
 
 =head1 VERSION
 
-version 1.27
+version 1.34
 
 =head1 AUTHOR
 

@@ -4,7 +4,7 @@ use Moose;
 use v5.10;
 
 # ABSTRACT: Minting profile for Plicease
-our $VERSION = '1.27'; # VERSION
+our $VERSION = '1.34'; # VERSION
 
 
 with qw( Dist::Zilla::Role::MintingProfile::ShareDir );
@@ -18,13 +18,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Dist::Zilla::MintingProfile::Author::Plicease - Minting profile for Plicease
 
 =head1 VERSION
 
-version 1.27
+version 1.34
 
 =head1 SYNOPSIS
 

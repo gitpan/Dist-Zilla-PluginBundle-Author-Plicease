@@ -4,7 +4,7 @@ use Moose;
 use v5.10;
 
 # ABSTRACT: Dist::Zilla::Plugin::Author::Plicease::PrePodWeaver
-our $VERSION = '1.27'; # VERSION
+our $VERSION = '1.34'; # VERSION
 
 with 'Dist::Zilla::Role::FileMunger';
 
@@ -74,13 +74,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Dist::Zilla::Plugin::Author::Plicease::PrePodWeaver - Dist::Zilla::Plugin::Author::Plicease::PrePodWeaver
 
 =head1 VERSION
 
-version 1.27
+version 1.34
 
 =head1 AUTHOR
 
