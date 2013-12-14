@@ -5,7 +5,7 @@ with 'Dist::Zilla::Role::FileGatherer';
 use YAML::XS qw( Dump LoadFile );
 
 # ABSTRACT: transform .travis.yml so that it uses Module::Build or MakeMaker for deps
-our $VERSION = '1.34'; # VERSION
+our $VERSION = '1.40'; # VERSION
 
 
 use namespace::autoclean;
@@ -57,7 +57,7 @@ Dist::Zilla::Plugin::Author::Plicease::TransformTravis - transform .travis.yml s
 
 =head1 VERSION
 
-version 1.34
+version 1.40
 
 =head1 SYNOPSIS
 

@@ -1,0 +1,106 @@
+
+use strict;
+use warnings;
+
+use Module::Build 0.3601;
+use lib qw{inc}; use Dist::Zilla::MintingProfile::Author::Plicease::ModuleBuild;
+
+my %module_build_args = (
+  "build_requires" => {
+    "Module::Build" => "0.3601"
+  },
+  "configure_requires" => {
+    "Module::Build" => "0.3601"
+  },
+  "dist_abstract" => "Dist::Zilla plugin bundle used by Plicease",
+  "dist_author" => [
+    "Graham Ollis <perl\@cpan.org>"
+  ],
+  "dist_name" => "Dist-Zilla-PluginBundle-Author-Plicease",
+  "dist_version" => "1.40",
+  "license" => "perl",
+  "module_name" => "Dist::Zilla::PluginBundle::Author::Plicease",
+  "recommends" => {
+    "JSON::XS" => 0,
+    "PerlX::Maybe::XS" => 0
+  },
+  "recursive_test_files" => 1,
+  "requires" => {
+    "Dist::Zilla" => 0,
+    "Dist::Zilla::File::FromCode" => 0,
+    "Dist::Zilla::File::InMemory" => 0,
+    "Dist::Zilla::Plugin::AutoMetaResources" => 0,
+    "Dist::Zilla::Plugin::AutoPrereqs" => 0,
+    "Dist::Zilla::Plugin::CSS::Compressor" => "0.01",
+    "Dist::Zilla::Plugin::InsertExample" => "0.02",
+    "Dist::Zilla::Plugin::InstallGuide" => 0,
+    "Dist::Zilla::Plugin::JavaScript::Minifier" => "0.01",
+    "Dist::Zilla::Plugin::MinimumPerl" => 0,
+    "Dist::Zilla::Plugin::NextRelease" => 0,
+    "Dist::Zilla::Plugin::OurPkgVersion" => 0,
+    "Dist::Zilla::Plugin::PodWeaver" => 0,
+    "Dist::Zilla::Plugin::ReadmeAnyFromPod" => 0,
+    "Dist::Zilla::Plugin::Run::BeforeBuild" => 0,
+    "Dist::Zilla::Plugin::Template::Tiny" => "0.03",
+    "Dist::Zilla::Plugin::TextTabs" => "0.02",
+    "Dist::Zilla::Plugin::UploadToCPAN" => 0,
+    "Dist::Zilla::Plugin::jQuery" => "0.01",
+    "Dist::Zilla::Role::AfterBuild" => 0,
+    "Dist::Zilla::Role::AfterMint" => 0,
+    "Dist::Zilla::Role::BeforeBuild" => 0,
+    "Dist::Zilla::Role::BeforeRelease" => 0,
+    "Dist::Zilla::Role::FileFinderUser" => 0,
+    "Dist::Zilla::Role::FileGatherer" => 0,
+    "Dist::Zilla::Role::FileMunger" => 0,
+    "Dist::Zilla::Role::InstallTool" => 0,
+    "Dist::Zilla::Role::MetaProvider" => 0,
+    "Dist::Zilla::Role::MintingProfile::ShareDir" => 0,
+    "Dist::Zilla::Role::ModuleMaker" => 0,
+    "Dist::Zilla::Role::PluginBundle::Easy" => 0,
+    "Dist::Zilla::Role::PrereqSource" => 0,
+    "Dist::Zilla::Role::TestRunner" => 0,
+    "Encode" => 0,
+    "File::Path" => 0,
+    "File::chdir" => 0,
+    "IPC::System::Simple" => 0,
+    "JSON" => 0,
+    "List::AllUtils" => 0,
+    "Moose" => 0,
+    "Path::Class" => "0.31",
+    "PerlX::Maybe" => 0,
+    "YAML::XS" => 0,
+    "autodie" => 0,
+    "namespace::autoclean" => 0,
+    "perl" => "5.008001",
+    "strict" => 0,
+    "utf8" => 0,
+    "warnings" => 0
+  },
+  "script_files" => [],
+  "share_dir" => {
+    "module" => {
+      "Dist::Zilla::MintingProfile::Author::Plicease" => "profiles"
+    }
+  },
+  "test_requires" => {
+    "Test::DZil" => 0,
+    "Test::More" => 0
+  }
+);
+
+
+my %fallback_build_requires = (
+  "Module::Build" => "0.3601",
+  "Test::DZil" => 0,
+  "Test::More" => 0
+);
+
+
+unless ( eval { Module::Build->VERSION(0.4004) } ) {
+  delete $module_build_args{test_requires};
+  $module_build_args{build_requires} = \%fallback_build_requires;
+}
+
+my $build = Dist::Zilla::MintingProfile::Author::Plicease::ModuleBuild->new(%module_build_args);
+
+$build->create_build_script;

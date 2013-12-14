@@ -1,10 +1,9 @@
 package Dist::Zilla::Plugin::Author::Plicease::Upload;
 
 use Moose;
-use v5.10;
 
 # ABSTRACT: Upload dist to CPAN
-our $VERSION = '1.34'; # VERSION
+our $VERSION = '1.40'; # VERSION
 
 extends 'Dist::Zilla::Plugin::UploadToCPAN';
 
@@ -61,7 +60,7 @@ Dist::Zilla::Plugin::Author::Plicease::Upload - Upload dist to CPAN
 
 =head1 VERSION
 
-version 1.34
+version 1.40
 
 =head1 AUTHOR
 

@@ -1,14 +1,16 @@
+Build.PL
 Changes
 INSTALL
 LICENSE
 MANIFEST
 META.json
 META.yml
-Makefile.PL
 README
 corpus/DZT/lib/DZT.pm
 dist.ini
+inc/Dist/Zilla/MintingProfile/Author/Plicease/ModuleBuild.pm
 lib/Dist/Zilla/MintingProfile/Author/Plicease.pm
+lib/Dist/Zilla/Plugin/Author/Plicease/FiveEight.pm
 lib/Dist/Zilla/Plugin/Author/Plicease/Init.pm
 lib/Dist/Zilla/Plugin/Author/Plicease/Init2.pm
 lib/Dist/Zilla/Plugin/Author/Plicease/MarkDownCleanup.pm

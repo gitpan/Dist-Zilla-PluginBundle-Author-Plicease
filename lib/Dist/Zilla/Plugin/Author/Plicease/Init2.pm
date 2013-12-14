@@ -1,7 +1,6 @@
 package Dist::Zilla::Plugin::Author::Plicease::Init2;
 
 use Moose;
-use v5.10;
 use Dist::Zilla::File::InMemory;
 use Dist::Zilla::File::FromCode;
 use Dist::Zilla::MintingProfile::Author::Plicease;
@@ -9,7 +8,7 @@ use JSON qw( to_json );
 use Encode qw( encode_utf8 );
 
 # ABSTRACT: Dist::Zilla initialization tasks for Plicease
-our $VERSION = '1.34'; # VERSION
+our $VERSION = '1.40'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterMint';
@@ -120,6 +119,7 @@ sub gather_file_dist_ini
     
     $content .= "[\@Author::Plicease]\n"
              .  "release_tests = " . $self->include_tests ."\n"
+             .  "installer     = ModuleBuild\n"
              .  "\n";
     
     $content .= "[RemovePrereqs]\n"
@@ -131,8 +131,8 @@ sub gather_file_dist_ini
              .  ";Foo::Bar = 0\n"
              .  "\n";
     
-    $content .= ";[Author::Plicease::Upload]\n"
-             .  "\n";
+    $content .= "[Author::Plicease::Upload]\n"
+             .  "cpan = 0\n";
              
     $content;
   };
@@ -290,7 +290,7 @@ Dist::Zilla::Plugin::Author::Plicease::Init2 - Dist::Zilla initialization tasks 
 
 =head1 VERSION
 
-version 1.34
+version 1.40
 
 =head1 DESCRIPTION
 

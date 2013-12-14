@@ -1,10 +1,9 @@
 package Dist::Zilla::Plugin::Author::Plicease::PrePodWeaver;
 
 use Moose;
-use v5.10;
 
 # ABSTRACT: Dist::Zilla::Plugin::Author::Plicease::PrePodWeaver
-our $VERSION = '1.34'; # VERSION
+our $VERSION = '1.40'; # VERSION
 
 with 'Dist::Zilla::Role::FileMunger';
 
@@ -82,7 +81,7 @@ Dist::Zilla::Plugin::Author::Plicease::PrePodWeaver - Dist::Zilla::Plugin::Autho
 
 =head1 VERSION
 
-version 1.34
+version 1.40
 
 =head1 AUTHOR
 

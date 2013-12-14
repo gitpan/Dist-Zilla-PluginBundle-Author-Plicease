@@ -1,16 +1,20 @@
 NAME
+
     Dist::Zilla::PluginBundle::Author::Plicease - Dist::Zilla plugin bundle
     used by Plicease
 
 VERSION
-    version 1.34
+
+    version 1.40
 
 SYNOPSIS
+
     In your dist.ini:
 
      [@Author::Plicease]
 
 DESCRIPTION
+
     This Dist::Zilla plugin bundle is the equivalent to
 
      # Basic - UploadToCPAN, Readme, ExtraTests, and ConfirmRelease
@@ -25,7 +29,7 @@ DESCRIPTION
      [MakeMaker]
      [Manifest]
      [TestRelease]
- 
+     
      [Author::Plicease::PrePodWeaver]
      [PodWeaver]
      [NextRelease]
@@ -33,62 +37,82 @@ DESCRIPTION
      [AutoPrereqs]
      [OurPkgVersion]
      [MetaJSON]
- 
+     
      [@Git]
      allow_dirty = dist.ini
      allow_dirty = Changes
      allow_dirty = README.md
- 
+     
      [AutoMetaResources]
      bugtracker.github = user:plicease
      repository.github = user:plicease
      homepage = http://perl.wdlabs.com/%{dist}/
- 
+     
      [Author::Plicease::TransformTravis]
- 
+     
      [InstallGuide]
      [MinimumPerl]
      [ConfirmRelease] 
- 
+     
      [ReadmeAnyFromPod]
      type     = text
      filename = README
      location = build
- 
+     
      [ReadmeAnyFromPod / ReadMePodInRoot]
      type     = markdown
      filename = README.md
      location = root
- 
+     
      [Author::Plicease::MarkDownCleanup]
      [Author::Plicease::Recommend]
 
 OPTIONS
-  installer
-    Specify an alternative to [MakeMaker] ([ModuleBuild], [ModuleBuildTiny],
-    or [ModuleBuildDatabase] for example).
+
+ installer
+
+    Specify an alternative to [MakeMaker] ([ModuleBuild],
+    [ModuleBuildTiny], or [ModuleBuildDatabase] for example).
 
     If installer is Alien, then any options with the alien_ prefix will be
     passed to Alien (minus the alien_ prefix).
 
-  readme_from
+    If installer is ModuleBuild, then any options with the mb_ prefix will
+    be passed to ModuleBuild (including the mb_ prefix).
+
+ readme_from
+
     Which file to pull from for the Readme (must be POD format). If not
     specified, then the main module will be used.
 
-  release_tests
+ release_tests
+
     If set to true, then include release tests when building.
 
-  travis_status
+ release_tests_skip
+
+    Passed into the Author::Plicease::Tests if release_tests is true.
+
+ travis_status
+
     if set to true, then include a link to the travis build page in the
     readme.
 
+ mb_class
+
+    if builder = ModuleBuild, this is the mb_class passed into the
+    [ModuleBuild] plugin.
+
 SEE ALSO
+
     Author::Plicease::Init, MintingProfile::Plicease
 
 AUTHOR
+
     Graham Ollis <perl@cpan.org>
 
 COPYRIGHT AND LICENSE
+
     This software is copyright (c) 2012 by Graham Ollis.
 
     This is free software; you can redistribute it and/or modify it under
