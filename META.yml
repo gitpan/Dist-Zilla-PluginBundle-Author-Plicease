@@ -28,20 +28,13 @@ requires:
   Dist::Zilla::File::InMemory: 0
   Dist::Zilla::Plugin::AutoMetaResources: 0
   Dist::Zilla::Plugin::AutoPrereqs: 0
-  Dist::Zilla::Plugin::CSS::Compressor: 0.01
-  Dist::Zilla::Plugin::InsertExample: 0.02
   Dist::Zilla::Plugin::InstallGuide: 0
-  Dist::Zilla::Plugin::JavaScript::Minifier: 0.01
   Dist::Zilla::Plugin::MinimumPerl: 0
   Dist::Zilla::Plugin::NextRelease: 0
   Dist::Zilla::Plugin::OurPkgVersion: 0
   Dist::Zilla::Plugin::PodWeaver: 0
   Dist::Zilla::Plugin::ReadmeAnyFromPod: 0
-  Dist::Zilla::Plugin::Run::BeforeBuild: 0
-  Dist::Zilla::Plugin::Template::Tiny: 0.03
-  Dist::Zilla::Plugin::TextTabs: 0.02
   Dist::Zilla::Plugin::UploadToCPAN: 0
-  Dist::Zilla::Plugin::jQuery: 0.01
   Dist::Zilla::Role::AfterBuild: 0
   Dist::Zilla::Role::AfterMint: 0
   Dist::Zilla::Role::BeforeBuild: 0
@@ -76,4 +69,4 @@ resources:
   bugtracker: https://github.com/plicease/dist-zilla-pluginbundle-author-plicease/issues
   homepage: http://perl.wdlabs.com/Dist-Zilla-PluginBundle-Author-Plicease/
   repository: git://github.com/plicease/dist-zilla-pluginbundle-author-plicease.git
-version: 1.40
+version: 1.42

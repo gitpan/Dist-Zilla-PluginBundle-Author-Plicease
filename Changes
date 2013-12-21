@@ -1,5 +1,12 @@
 Revision history for Dist-Zilla-PluginBundle-Author-Plicease
 
+1.42      2013-12-21 17:09:01 -0500
+  - slim down the prereqs.
+
+1.41      2013-12-14 06:15:47 -0500
+  - Don't allow release on MSWin32
+  - Don't allow release on Perl 5.8 (implemented, but not documented in 1.40)
+
 1.40      2013-12-13 22:16:55 -0500
   - Support Perl 5.8
 
