@@ -5,7 +5,7 @@ use Dist::Zilla;
 use PerlX::Maybe qw( maybe );
 
 # ABSTRACT: Dist::Zilla plugin bundle used by Plicease
-our $VERSION = '1.42'; # VERSION
+our $VERSION = '1.43'; # VERSION
 
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -31,6 +31,24 @@ sub configure
       sub Dist::Zilla::Role::BuildPL::test {};
     };
   }
+
+  $self->add_plugins(['Run::AfterBuild'         => { run => "%x inc/run/after_build.pl      --name %n --version %v --dir %d" }])
+    if -r "inc/run/after_build.pl";
+
+  $self->add_plugins(['Run::AfterRelease'       => { run => "%x inc/run/after_release.pl    --name %n --version %v --dir %d --archive %a" }])
+    if -r "inc/run/after_release.pl";
+
+  $self->add_plugins(['Run::BeforeBuild'        => { run => "%x inc/run/before_build.pl     --name %n --version %v" }])
+    if -r "inc/run/before_build.pl";
+
+  $self->add_plugins(['Run::BeforeRelease'      => { run => "%x inc/run/before_release.pl   ---name %n --version %v --dir %d --archive %a" }])
+    if -r "inc/run/before_release.pl";
+
+  $self->add_plugins(['Run::Release'            => { run => "%x inc/run/release.pl          ---name %n --version %v --dir %d --archive %a" }])
+    if -r "inc/run/release.pl";
+
+  $self->add_plugins(['Run::Test'               => { run => "%x inc/run/test.pl             ---name %n --version %v --dir %d" }])
+    if -r "inc/run/test.pl";
 
   $self->add_plugins(
     'Author::Plicease::FiveEight',
@@ -163,7 +181,7 @@ Dist::Zilla::PluginBundle::Author::Plicease - Dist::Zilla plugin bundle used by 
 
 =head1 VERSION
 
-version 1.42
+version 1.43
 
 =head1 SYNOPSIS
 

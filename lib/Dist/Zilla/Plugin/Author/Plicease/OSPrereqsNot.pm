@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Plugin::Author::Plicease::OSPrereqsNot;
 # ABSTRACT: List prerequisites conditional on operating system
-our $VERSION = '1.42'; # VERSION
+our $VERSION = '1.43'; # VERSION
 
 use Moose;
 use List::AllUtils 'first';
@@ -145,7 +145,7 @@ Dist::Zilla::Plugin::Author::Plicease::OSPrereqsNot - List prerequisites conditi
 
 =head1 VERSION
 
-version 1.42
+version 1.43
 
 =for Pod::Coverage setup_installer metadata
 

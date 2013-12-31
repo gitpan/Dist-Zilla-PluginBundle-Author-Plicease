@@ -5,7 +5,7 @@ use Moose;
 with 'Dist::Zilla::Role::BeforeRelease';
 
 # ABSTRACT: Don't release on old perls
-our $VERSION = '1.42'; # VERSION
+our $VERSION = '1.43'; # VERSION
 
 sub before_release
 {
@@ -28,7 +28,7 @@ Dist::Zilla::Plugin::Author::Plicease::FiveEight - Don't release on old perls
 
 =head1 VERSION
 
-version 1.42
+version 1.43
 
 =head1 AUTHOR
 
