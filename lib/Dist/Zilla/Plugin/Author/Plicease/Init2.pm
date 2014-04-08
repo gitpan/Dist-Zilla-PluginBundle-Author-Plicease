@@ -8,7 +8,7 @@ use JSON qw( to_json );
 use Encode qw( encode_utf8 );
 
 # ABSTRACT: Dist::Zilla initialization tasks for Plicease
-our $VERSION = '1.43'; # VERSION
+our $VERSION = '1.45'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterMint';
@@ -290,7 +290,7 @@ Dist::Zilla::Plugin::Author::Plicease::Init2 - Dist::Zilla initialization tasks 
 
 =head1 VERSION
 
-version 1.43
+version 1.45
 
 =head1 DESCRIPTION
 

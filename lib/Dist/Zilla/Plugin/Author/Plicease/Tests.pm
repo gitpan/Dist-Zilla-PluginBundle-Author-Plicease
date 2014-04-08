@@ -8,12 +8,14 @@ use File::Path qw( make_path );
 use Dist::Zilla::MintingProfile::Author::Plicease;
 
 # ABSTRACT: add author only release tests to xt/release
-our $VERSION = '1.43'; # VERSION
+our $VERSION = '1.45'; # VERSION
 
 
 with 'Dist::Zilla::Role::BeforeBuild';
 with 'Dist::Zilla::Role::InstallTool';
 with 'Dist::Zilla::Role::TestRunner';
+
+sub mvp_multivalue_args { qw( diag ) }
 
 has source => (
   is      =>'ro',
@@ -24,6 +26,11 @@ has skip => (
   is      => 'ro',
   isa     => 'Str',
   default => '',
+);
+
+has diag => (
+  is      => 'ro',
+  default => sub { [] },
 );
 
 sub before_build
@@ -106,6 +113,22 @@ sub setup_installer
     }
   }
   
+  foreach my $lib (@{ $self->diag })
+  {
+    if($lib =~ /^-(.*)$/)
+    {
+      delete $list{$1};
+    }
+    elsif($lib =~ /^\+(.*)$/)
+    {
+      $list{$1}++;
+    }
+    else
+    {
+      $self->log_fatal('diagnostic override must be prefixed with + or -');
+    }
+  }
+  
   my $content = join "\n", sort keys %list;
   $content .= "\n";
   
@@ -123,6 +146,24 @@ sub setup_installer
       content => $content,
     });
     $self->add_file($file);
+  }
+  
+  if($list{EV})
+  {
+    $self->zilla->root->file('t', '00_diag.pre.txt')->spew("EV\n");
+    my($file) = grep { $_->name eq 't/00_diag.pre.txt' } @{ $self->zilla->files };
+    if($file)
+    {
+      $file->content("EV\n");
+    }
+    else
+    {
+      $file = Dist::Zilla::File::InMemory->new({
+        name    => '00_diag.pre.txt',
+        content => "EV\n",
+      });
+      $self->add_file($file);
+    }
   }
 }
 
@@ -147,13 +188,17 @@ Dist::Zilla::Plugin::Author::Plicease::Tests - add author only release tests to 
 
 =head1 VERSION
 
-version 1.43
+version 1.45
 
 =head1 SYNOPSIS
 
  [Author::Plicease::Tests]
  source = foo/bar/baz ; source of tests
  skip = pod_.*
+ diag = +Acme::Override::INET
+ diag = +IO::Socket::INET
+ diag = +IO::SOCKET::IP
+ diag = -EV
 
 =head1 AUTHOR
 

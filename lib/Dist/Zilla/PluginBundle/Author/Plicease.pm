@@ -5,14 +5,14 @@ use Dist::Zilla;
 use PerlX::Maybe qw( maybe );
 
 # ABSTRACT: Dist::Zilla plugin bundle used by Plicease
-our $VERSION = '1.43'; # VERSION
+our $VERSION = '1.45'; # VERSION
 
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
 
 use namespace::autoclean;
 
-sub mvp_multivalue_args { qw( alien_build_command alien_install_command ) }
+sub mvp_multivalue_args { qw( alien_build_command alien_install_command diag ) }
 
 sub configure
 {
@@ -120,14 +120,12 @@ sub configure
 
   if($self->payload->{release_tests})
   {
-    if($self->payload->{release_tests_skip})
-    {
-      $self->add_plugins([ 'Author::Plicease::Tests' => { skip => $self->payload->{release_tests_skip} }])
-    }
-    else
-    {
-      $self->add_plugins('Author::Plicease::Tests')
-    }
+    $self->add_plugins([
+      'Author::Plicease::Tests' => {
+        maybe skip => $self->payload->{release_tests_skip},
+        maybe diag => $self->payload->{diag},
+      }
+    ]);
   }
     
   $self->add_plugins(qw(
@@ -181,7 +179,7 @@ Dist::Zilla::PluginBundle::Author::Plicease - Dist::Zilla plugin bundle used by 
 
 =head1 VERSION
 
-version 1.43
+version 1.45
 
 =head1 SYNOPSIS
 
