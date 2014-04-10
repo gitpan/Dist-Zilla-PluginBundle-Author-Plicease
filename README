@@ -5,7 +5,7 @@ NAME
 
 VERSION
 
-    version 1.45
+    version 1.46
 
 SYNOPSIS
 
@@ -91,6 +91,10 @@ OPTIONS
 
     If installer is ModuleBuild, then any options with the mb_ prefix will
     be passed to ModuleBuild (including the mb_ prefix).
+
+    If you have a inc/My/ModuleBuild.pm file in your dist, then this plugin
+    bundle will assume installer is ModuleBuild and mb_class =
+    My::ModuleBuild.
 
  readme_from
 

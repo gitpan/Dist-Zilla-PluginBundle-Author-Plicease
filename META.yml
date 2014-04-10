@@ -58,6 +58,7 @@ requires:
   List::AllUtils: '0'
   Moose: '0'
   Path::Class: '0.31'
+  Path::Class::File: '0'
   PerlX::Maybe: '0'
   YAML::XS: '0'
   autodie: '0'
@@ -70,4 +71,4 @@ resources:
   bugtracker: https://github.com/plicease/dist-zilla-pluginbundle-author-plicease/issues
   homepage: http://perl.wdlabs.com/Dist-Zilla-PluginBundle-Author-Plicease/
   repository: git://github.com/plicease/dist-zilla-pluginbundle-author-plicease.git
-version: '1.45'
+version: '1.46'

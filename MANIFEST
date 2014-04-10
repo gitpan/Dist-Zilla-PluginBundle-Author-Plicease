@@ -41,6 +41,7 @@ profiles/default/skel/xt/release/pod_spelling_common.t
 profiles/default/skel/xt/release/pod_spelling_system.t
 profiles/default/skel/xt/release/release.yml
 profiles/default/skel/xt/release/strict.t
+profiles/default/skel/xt/release/unused_vars.t
 profiles/default/skel/xt/release/version.t
 t/00_diag.t
 t/00_diag.txt
@@ -61,4 +62,5 @@ xt/release/pod_spelling_common.t
 xt/release/pod_spelling_system.t
 xt/release/release.yml
 xt/release/strict.t
+xt/release/unused_vars.t
 xt/release/version.t

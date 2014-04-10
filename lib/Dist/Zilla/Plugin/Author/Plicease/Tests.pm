@@ -8,7 +8,7 @@ use File::Path qw( make_path );
 use Dist::Zilla::MintingProfile::Author::Plicease;
 
 # ABSTRACT: add author only release tests to xt/release
-our $VERSION = '1.45'; # VERSION
+our $VERSION = '1.46'; # VERSION
 
 
 with 'Dist::Zilla::Role::BeforeBuild';
@@ -77,14 +77,23 @@ sub before_build
     $t_config->openw->print(<<EOF);
 ---
 pod_spelling_system:
+  skip: 0
   # list of words that are spelled correctly
   # (regardless of what spell check thinks)
   stopwords: []
 
 pod_coverage:
+  skip: 0
   # format is "Class#method" or "Class", regex allowed
   # for either Class or method.
   private: []
+
+unused_vars:
+  skip: 0
+  global:
+    ignore_vars: []
+  module: []
+
 EOF
   }
 
@@ -188,7 +197,7 @@ Dist::Zilla::Plugin::Author::Plicease::Tests - add author only release tests to 
 
 =head1 VERSION
 
-version 1.45
+version 1.46
 
 =head1 SYNOPSIS
 
