@@ -1,5 +1,9 @@
 Revision history for Dist-Zilla-PluginBundle-Author-Plicease
 
+1.47      2014-04-16 02:26:37 -0400
+  - update .travis.yml template to reflect my current usage
+  - fixed tempalte release.yml
+
 1.46      2014-04-10 13:27:07 -0400
   - add to standard diagnostic
   - assume installer = ModuleBuild and mb_class = My::ModuleBuild if inc/My/ModuleBuild.pm is found

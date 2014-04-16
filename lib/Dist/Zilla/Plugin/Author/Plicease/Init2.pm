@@ -8,7 +8,7 @@ use JSON qw( to_json );
 use Encode qw( encode_utf8 );
 
 # ABSTRACT: Dist::Zilla initialization tasks for Plicease
-our $VERSION = '1.46'; # VERSION
+our $VERSION = '1.47'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterMint';
@@ -81,11 +81,17 @@ sub gather_file_travis_yml
     name    => '.travis.yml',
     content => join("\n", q{language: perl},
                           q{},
-                          q{#install:},
+                          q{install:},
+                          q{  - cpanm -n Dist::Zilla},
+                          q{  - cpanm authordeps --missing | cpanm -n},
+                          q{  - cpanm -n Test::CPAN::Changes Test::EOL Test::Fixme Test::NoTabs Test::Pod::Spelling::CommonMistakes Test::Spelling Test::Strict Test::Version Test::Vars || true},
                           q{#  - cpanm -n Foo::Bar},
                           q{},
                           q{perl:},
-                          (map { "  - \"5.$_\""} qw( 10 12 14 16 18 )),
+                          (map { "  - \"5.$_\""} qw( 8 10 12 14 16 18 )),
+                          q{},
+                          q{#env:},
+                          q{#  - FOO=bar},
                           q{},
                           q{#before_script: /bin/true},
                           q{},
@@ -290,7 +296,7 @@ Dist::Zilla::Plugin::Author::Plicease::Init2 - Dist::Zilla initialization tasks 
 
 =head1 VERSION
 
-version 1.46
+version 1.47
 
 =head1 DESCRIPTION
 

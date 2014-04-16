@@ -3,7 +3,7 @@ package Dist::Zilla::MintingProfile::Author::Plicease;
 use Moose;
 
 # ABSTRACT: Minting profile for Plicease
-our $VERSION = '1.46'; # VERSION
+our $VERSION = '1.47'; # VERSION
 
 
 with qw( Dist::Zilla::Role::MintingProfile::ShareDir );
@@ -25,7 +25,7 @@ Dist::Zilla::MintingProfile::Author::Plicease - Minting profile for Plicease
 
 =head1 VERSION
 
-version 1.46
+version 1.47
 
 =head1 SYNOPSIS
 
