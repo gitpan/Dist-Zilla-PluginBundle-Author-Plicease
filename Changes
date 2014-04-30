@@ -1,5 +1,7 @@
 Revision history for Dist-Zilla-PluginBundle-Author-Plicease
 
+1.48      2014-04-30 13:23:38 -0400
+
 1.47      2014-04-16 02:26:37 -0400
   - update .travis.yml template to reflect my current usage
   - fixed tempalte release.yml

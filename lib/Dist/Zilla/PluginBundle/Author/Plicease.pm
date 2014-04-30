@@ -6,7 +6,7 @@ use PerlX::Maybe qw( maybe );
 use Path::Class::File;
 
 # ABSTRACT: Dist::Zilla plugin bundle used by Plicease
-our $VERSION = '1.47'; # VERSION
+our $VERSION = '1.48'; # VERSION
 
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -186,7 +186,7 @@ Dist::Zilla::PluginBundle::Author::Plicease - Dist::Zilla plugin bundle used by 
 
 =head1 VERSION
 
-version 1.47
+version 1.48
 
 =head1 SYNOPSIS
 
