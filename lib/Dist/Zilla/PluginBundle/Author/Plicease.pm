@@ -6,7 +6,7 @@ use PerlX::Maybe qw( maybe );
 use Path::Class::File;
 
 # ABSTRACT: Dist::Zilla plugin bundle used by Plicease
-our $VERSION = '1.48'; # VERSION
+our $VERSION = '1.49'; # VERSION
 
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -168,6 +168,18 @@ sub configure
   ]);
   
   $self->add_plugins(qw( Author::Plicease::Recommend ));
+  
+  if(eval { require Dist::Zilla::Plugin::ACPS::RPM })
+  { $self->add_plugins(qw( ACPS::RPM )) }
+  
+  if($^O eq 'MSWin32')
+  {
+    $self->add_plugins([
+      'Run::AfterBuild' => {
+        run => 'dos2unix README.md t/00_diag.*',
+      },
+    ]);
+  }
 }
 
 __PACKAGE__->meta->make_immutable;
@@ -186,7 +198,7 @@ Dist::Zilla::PluginBundle::Author::Plicease - Dist::Zilla plugin bundle used by 
 
 =head1 VERSION
 
-version 1.48
+version 1.49
 
 =head1 SYNOPSIS
 

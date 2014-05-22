@@ -8,8 +8,8 @@ build_requires:
   Test::More: '0'
 configure_requires:
   Module::Build: '0.3601'
-dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.015, CPAN::Meta::Converter version 2.141170'
+dynamic_config: 1
+generated_by: 'Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.141170'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -64,11 +64,9 @@ requires:
   autodie: '0'
   namespace::autoclean: '0'
   perl: '5.008001'
-  strict: '0'
   utf8: '0'
-  warnings: '0'
 resources:
   bugtracker: https://github.com/plicease/dist-zilla-pluginbundle-author-plicease/issues
   homepage: http://perl.wdlabs.com/Dist-Zilla-PluginBundle-Author-Plicease/
   repository: git://github.com/plicease/dist-zilla-pluginbundle-author-plicease.git
-version: '1.48'
+version: '1.49'
