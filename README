@@ -5,7 +5,7 @@ NAME
 
 VERSION
 
-    version 1.49
+    version 1.50
 
 SYNOPSIS
 
@@ -43,11 +43,7 @@ DESCRIPTION
      allow_dirty = Changes
      allow_dirty = README.md
      
-     [AutoMetaResources]
-     bugtracker.github = user:plicease
-     repository.github = user:plicease
-     homepage = http://perl.wdlabs.com/%{dist}/
-     
+     [Author::Plicease::Resources]
      [InstallGuide]
      [MinimumPerl]
      [ConfirmRelease] 
@@ -118,6 +114,14 @@ OPTIONS
 
     if builder = ModuleBuild, this is the mb_class passed into the
     [ModuleBuild] plugin.
+
+ github_repo
+
+    Set the GitHub repo name to something other than the dist name.
+
+ github_user
+
+    Set the GitHub user name.
 
 SEE ALSO
 

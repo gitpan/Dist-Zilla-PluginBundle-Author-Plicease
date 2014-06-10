@@ -90,15 +90,15 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/plicease/dist-zilla-pluginbundle-author-plicease/issues"
+         "web" : "https://github.com/plicease/Dist-Zilla-PluginBundle-Author-Plicease/issues"
       },
-      "homepage" : "http://perl.wdlabs.com/Dist-Zilla-PluginBundle-Author-Plicease/",
+      "homepage" : "http://perl.wdlabs.com/Dist-Zilla-PluginBundle-Author-Plicease",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/plicease/dist-zilla-pluginbundle-author-plicease.git",
-         "web" : "https://github.com/plicease/dist-zilla-pluginbundle-author-plicease"
+         "url" : "git://github.com/plicease/Dist-Zilla-PluginBundle-Author-Plicease.git",
+         "web" : "https://github.com/plicease/Dist-Zilla-PluginBundle-Author-Plicease"
       }
    },
-   "version" : "1.49"
+   "version" : "1.50"
 }
 

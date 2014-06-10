@@ -1,5 +1,12 @@
 Revision history for Dist-Zilla-PluginBundle-Author-Plicease
 
+1.50      2014-06-10 07:53:11 -0400
+  - added [Author::Plicease::Resources] and am
+    using it for [@Author::Plicease] now.  This was
+    needed to allow the repo for Alien-Libarchive be
+    named Alien-Libarchive2
+  - fixed .travis.yml template
+
 1.49      2014-05-22 07:45:40 -0400
   - make this distribution properly dynamic
   - include [ACPS::RPM] in bundle, if it is there
