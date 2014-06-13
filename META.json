@@ -83,7 +83,7 @@
       "test" : {
          "requires" : {
             "Test::DZil" : "0",
-            "Test::More" : "0"
+            "Test::More" : "0.94"
          }
       }
    },
@@ -99,6 +99,6 @@
          "web" : "https://github.com/plicease/Dist-Zilla-PluginBundle-Author-Plicease"
       }
    },
-   "version" : "1.50"
+   "version" : "1.51"
 }
 

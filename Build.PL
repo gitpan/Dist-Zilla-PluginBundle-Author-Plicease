@@ -18,7 +18,7 @@ my %module_build_args = (
     "Graham Ollis <perl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-Plicease",
-  "dist_version" => "1.50",
+  "dist_version" => "1.51",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::Plicease",
   "recommends" => {
@@ -78,7 +78,7 @@ my %module_build_args = (
   },
   "test_requires" => {
     "Test::DZil" => 0,
-    "Test::More" => 0
+    "Test::More" => "0.94"
   }
 );
 
@@ -86,7 +86,7 @@ my %module_build_args = (
 my %fallback_build_requires = (
   "Module::Build" => "0.3601",
   "Test::DZil" => 0,
-  "Test::More" => 0
+  "Test::More" => "0.94"
 );
 
 

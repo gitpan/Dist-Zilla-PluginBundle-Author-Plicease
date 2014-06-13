@@ -5,7 +5,7 @@ NAME
 
 VERSION
 
-    version 1.50
+    version 1.51
 
 SYNOPSIS
 
@@ -60,6 +60,11 @@ DESCRIPTION
      
      [Author::Plicease::MarkDownCleanup]
      [Author::Plicease::Recommend]
+     
+     [Prereqs / NeedTestMore094]
+     ; for subtest
+     -phase     = test
+     Test::More = 0.94
 
     Some exceptions:
 

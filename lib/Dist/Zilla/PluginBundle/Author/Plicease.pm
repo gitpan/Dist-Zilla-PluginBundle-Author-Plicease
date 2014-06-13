@@ -6,7 +6,7 @@ use PerlX::Maybe qw( maybe );
 use Path::Class::File;
 
 # ABSTRACT: Dist::Zilla plugin bundle used by Plicease
-our $VERSION = '1.50'; # VERSION
+our $VERSION = '1.51'; # VERSION
 
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -165,8 +165,15 @@ sub configure
       travis_status => int(defined $self->payload->{travis_status} ? $self->payload->{travis_status} : 0),
     },
   ]);
-  
+
   $self->add_plugins(qw( Author::Plicease::Recommend ));
+  
+  $self->add_plugins([
+    'Prereqs' => 'NeedTestMore094' => {
+      '-phase'     => 'test',
+      'Test::More' => '0.94',
+    },
+  ]);
   
   if(eval { require Dist::Zilla::Plugin::ACPS::RPM })
   { $self->add_plugins(qw( ACPS::RPM )) }
@@ -197,7 +204,7 @@ Dist::Zilla::PluginBundle::Author::Plicease - Dist::Zilla plugin bundle used by 
 
 =head1 VERSION
 
-version 1.50
+version 1.51
 
 =head1 SYNOPSIS
 
@@ -252,6 +259,11 @@ This Dist::Zilla plugin bundle is mostly equivalent to
  
  [Author::Plicease::MarkDownCleanup]
  [Author::Plicease::Recommend]
+ 
+ [Prereqs / NeedTestMore094]
+ ; for subtest
+ -phase     = test
+ Test::More = 0.94
 
 Some exceptions:
 
