@@ -59,7 +59,7 @@ requires:
   Moose: '0'
   Path::Class: '0.31'
   Path::Class::File: '0'
-  PerlX::Maybe: '0'
+  PerlX::Maybe: '0.003'
   YAML::XS: '0'
   autodie: '0'
   namespace::autoclean: '0'
@@ -69,4 +69,4 @@ resources:
   bugtracker: https://github.com/plicease/Dist-Zilla-PluginBundle-Author-Plicease/issues
   homepage: http://perl.wdlabs.com/Dist-Zilla-PluginBundle-Author-Plicease
   repository: git://github.com/plicease/Dist-Zilla-PluginBundle-Author-Plicease.git
-version: '1.51'
+version: '1.52'

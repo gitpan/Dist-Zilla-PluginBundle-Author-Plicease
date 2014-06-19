@@ -6,7 +6,7 @@ use PerlX::Maybe qw( maybe );
 use Path::Class::File;
 
 # ABSTRACT: Dist::Zilla plugin bundle used by Plicease
-our $VERSION = '1.51'; # VERSION
+our $VERSION = '1.52'; # VERSION
 
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -175,6 +175,10 @@ sub configure
     },
   ]);
   
+  $self->add_plugins([
+    'Author::Plicease::SpecialPrereqs',
+  ]);
+  
   if(eval { require Dist::Zilla::Plugin::ACPS::RPM })
   { $self->add_plugins(qw( ACPS::RPM )) }
   
@@ -204,7 +208,7 @@ Dist::Zilla::PluginBundle::Author::Plicease - Dist::Zilla plugin bundle used by 
 
 =head1 VERSION
 
-version 1.51
+version 1.52
 
 =head1 SYNOPSIS
 
@@ -264,6 +268,8 @@ This Dist::Zilla plugin bundle is mostly equivalent to
  ; for subtest
  -phase     = test
  Test::More = 0.94
+ 
+ [SpecialPrereqs]
 
 Some exceptions:
 

@@ -5,7 +5,7 @@ NAME
 
 VERSION
 
-    version 1.51
+    version 1.52
 
 SYNOPSIS
 
@@ -65,6 +65,8 @@ DESCRIPTION
      ; for subtest
      -phase     = test
      Test::More = 0.94
+     
+     [SpecialPrereqs]
 
     Some exceptions:
 
