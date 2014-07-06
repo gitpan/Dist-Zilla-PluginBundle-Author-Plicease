@@ -5,7 +5,7 @@ use warnings;
 use Moose;
 
 # ABSTRACT: Special prereq handling
-our $VERSION = '1.52'; # VERSION
+our $VERSION = '1.53'; # VERSION
 
 
 with 'Dist::Zilla::Role::PrereqSource';
@@ -17,6 +17,7 @@ my %upgrades = qw(
   AnyEvent::Open3::Simple               0.76
   Path::Class                           0.26
   Mojolicious                           4.31
+  Role::Tiny                            1.003001
 );
 
 sub register_prereqs
@@ -58,7 +59,7 @@ Dist::Zilla::Plugin::Author::Plicease::SpecialPrereqs - Special prereq handling
 
 =head1 VERSION
 
-version 1.52
+version 1.53
 
 =head1 SYNOPSIS
 
@@ -98,6 +99,10 @@ Require 0.26 for spew
 =item Mojolicious
 
 Require 4.31
+
+=item Role::Tiny
+
+Require 1.003001.  See rt#83248
 
 =back
 
