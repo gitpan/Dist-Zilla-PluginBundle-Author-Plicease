@@ -4,9 +4,11 @@ use Moose;
 use Dist::Zilla;
 use PerlX::Maybe qw( maybe );
 use Path::Class::File;
+use YAML ();
+use Term::ANSIColor ();
 
 # ABSTRACT: Dist::Zilla plugin bundle used by Plicease
-our $VERSION = '1.53'; # VERSION
+our $VERSION = '1.54'; # VERSION
 
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -190,6 +192,22 @@ sub configure
       },
     ]);
   }
+  
+  if(-e ".travis.yml")
+  {
+    my $travis = YAML::LoadFile(".travis.yml");
+    if(exists $travis->{perl} && grep /^5\.19$/, @{ $travis->{perl} })
+    {
+      die "travis is trying to test Perl 5.19";
+    }
+    unless(exists $travis->{perl} && grep /^5\.20$/, @{ $travis->{perl} })
+    {
+      print STDERR Term::ANSIColor::color('bold red') if -t STDERR;
+      print STDERR "travis is not testing Perl 5.20";
+      print STDERR Term::ANSIColor::color('reset') if -t STDERR;
+      print STDERR "\n";
+    }
+  }
 }
 
 __PACKAGE__->meta->make_immutable;
@@ -208,7 +226,7 @@ Dist::Zilla::PluginBundle::Author::Plicease - Dist::Zilla plugin bundle used by 
 
 =head1 VERSION
 
-version 1.53
+version 1.54
 
 =head1 SYNOPSIS
 
