@@ -18,7 +18,7 @@ my %module_build_args = (
     "Graham Ollis <perl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-Plicease",
-  "dist_version" => "1.54",
+  "dist_version" => "1.55",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::Plicease",
   "recommends" => {
