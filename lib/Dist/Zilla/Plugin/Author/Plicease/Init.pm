@@ -3,7 +3,7 @@ package Dist::Zilla::Plugin::Author::Plicease::Init;
 use Moose;
 
 # ABSTRACT: Dist::Zilla initialization tasks for Plicease
-our $VERSION = '1.55'; # VERSION
+our $VERSION = '1.56'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterMint';
@@ -33,7 +33,7 @@ Dist::Zilla::Plugin::Author::Plicease::Init - Dist::Zilla initialization tasks f
 
 =head1 VERSION
 
-version 1.55
+version 1.56
 
 =head1 SYNOPSIS
 

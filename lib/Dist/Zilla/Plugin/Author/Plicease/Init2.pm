@@ -8,7 +8,7 @@ use JSON qw( to_json );
 use Encode qw( encode_utf8 );
 
 # ABSTRACT: Dist::Zilla initialization tasks for Plicease
-our $VERSION = '1.55'; # VERSION
+our $VERSION = '1.56'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterMint';
@@ -80,6 +80,9 @@ sub gather_file_travis_yml
     name    => '.travis.yml',
     content => join("\n", q{language: perl},
                           q{},
+                          q{# remember need at least one install command, even if there are no},
+                          q{# prereqs, else travis will try to install deps using cpanm},
+                          q{# which is not what we want since this is a Dist::Zilla dist.},
                           q{install:},
                           q{  - cpanm -n Dist::Zilla},
                           q{  - dzil authordeps --missing | cpanm -n},
@@ -95,7 +98,7 @@ sub gather_file_travis_yml
                           q{#before_script: /bin/true},
                           q{},
                           q{script:},
-                          q{  - dzil test},
+                          q{  - dzil test -v},
                           q{},
                           q{#after_script: /bin/true},
                           q{},
@@ -296,7 +299,7 @@ Dist::Zilla::Plugin::Author::Plicease::Init2 - Dist::Zilla initialization tasks 
 
 =head1 VERSION
 
-version 1.55
+version 1.56
 
 =head1 DESCRIPTION
 
