@@ -5,7 +5,7 @@ use warnings;
 use Moose;
 
 # ABSTRACT: Special prereq handling
-our $VERSION = '1.57'; # VERSION
+our $VERSION = '1.58'; # VERSION
 
 
 with 'Dist::Zilla::Role::PrereqSource';
@@ -59,7 +59,7 @@ Dist::Zilla::Plugin::Author::Plicease::SpecialPrereqs - Special prereq handling
 
 =head1 VERSION
 
-version 1.57
+version 1.58
 
 =head1 SYNOPSIS
 
