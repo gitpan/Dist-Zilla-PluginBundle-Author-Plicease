@@ -7,7 +7,7 @@ with 'Dist::Zilla::Role::FileFinderUser' => {
 };
 
 # ABSTRACT: munge the AUTHOR section
-our $VERSION = '1.58'; # VERSION
+our $VERSION = '1.59'; # VERSION
 
 
 has original => (
@@ -73,6 +73,8 @@ sub munge_file
   return;
 }
 
+__PACKAGE__->meta->make_immutable;
+
 1;
 
 __END__
@@ -87,7 +89,7 @@ Dist::Zilla::Plugin::Author::Plicease::Thanks - munge the AUTHOR section
 
 =head1 VERSION
 
-version 1.58
+version 1.59
 
 =head1 SYNOPSIS
 

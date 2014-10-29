@@ -8,7 +8,7 @@ use JSON qw( to_json );
 use Encode qw( encode_utf8 );
 
 # ABSTRACT: Dist::Zilla initialization tasks for Plicease
-our $VERSION = '1.58'; # VERSION
+our $VERSION = '1.59'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterMint';
@@ -141,7 +141,11 @@ sub gather_file_dist_ini
              .  "\n";
     
     $content .= "[Author::Plicease::Upload]\n"
-             .  "cpan = 0\n";
+             .  "cpan = 0\n"
+             .  "\n";
+             
+    $content .= "[Author::Plicease::InstallerPerlVersion]\n"
+             .  "\n";
              
     $content;
   };
@@ -299,7 +303,7 @@ Dist::Zilla::Plugin::Author::Plicease::Init2 - Dist::Zilla initialization tasks 
 
 =head1 VERSION
 
-version 1.58
+version 1.59
 
 =head1 DESCRIPTION
 

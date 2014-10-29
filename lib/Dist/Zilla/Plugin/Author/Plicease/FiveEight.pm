@@ -5,7 +5,7 @@ use Moose;
 with 'Dist::Zilla::Role::BeforeRelease';
 
 # ABSTRACT: Don't release on old perls
-our $VERSION = '1.58'; # VERSION
+our $VERSION = '1.59'; # VERSION
 
 sub before_release
 {
@@ -13,6 +13,8 @@ sub before_release
   $self->log_fatal('release requires Perl 5.10 or better') if $] < 5.010000;
   $self->log_fatal('don\'t release via MSWin32')           if $^O eq 'MSWin32';
 }
+
+__PACKAGE__->meta->make_immutable;
 
 1;
 
@@ -28,7 +30,7 @@ Dist::Zilla::Plugin::Author::Plicease::FiveEight - Don't release on old perls
 
 =head1 VERSION
 
-version 1.58
+version 1.59
 
 =head1 AUTHOR
 

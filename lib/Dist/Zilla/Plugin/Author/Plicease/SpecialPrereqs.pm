@@ -5,7 +5,7 @@ use warnings;
 use Moose;
 
 # ABSTRACT: Special prereq handling
-our $VERSION = '1.58'; # VERSION
+our $VERSION = '1.59'; # VERSION
 
 
 with 'Dist::Zilla::Role::PrereqSource';
@@ -45,6 +45,8 @@ sub register_prereqs
   }
 }
 
+__PACKAGE__->meta->make_immutable;
+
 1;
 
 __END__
@@ -59,7 +61,7 @@ Dist::Zilla::Plugin::Author::Plicease::SpecialPrereqs - Special prereq handling
 
 =head1 VERSION
 
-version 1.58
+version 1.59
 
 =head1 SYNOPSIS
 

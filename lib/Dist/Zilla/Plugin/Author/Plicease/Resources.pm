@@ -4,7 +4,7 @@ use Moose;
 with 'Dist::Zilla::Role::MetaProvider';
 
 # ABSTRACT: Set distribution meta resources
-our $VERSION = '1.58'; # VERSION
+our $VERSION = '1.59'; # VERSION
 
 
 has github_user => (
@@ -61,7 +61,7 @@ Dist::Zilla::Plugin::Author::Plicease::Resources - Set distribution meta resourc
 
 =head1 VERSION
 
-version 1.58
+version 1.59
 
 =head1 SYNOPSIS
 

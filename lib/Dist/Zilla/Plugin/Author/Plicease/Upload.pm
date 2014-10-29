@@ -3,7 +3,7 @@ package Dist::Zilla::Plugin::Author::Plicease::Upload;
 use Moose;
 
 # ABSTRACT: Upload dist to CPAN
-our $VERSION = '1.58'; # VERSION
+our $VERSION = '1.59'; # VERSION
 
 extends 'Dist::Zilla::Plugin::UploadToCPAN';
 
@@ -46,6 +46,8 @@ around release => sub {
   return;
 };
 
+__PACKAGE__->meta->make_immutable;
+
 1;
 
 __END__
@@ -60,7 +62,7 @@ Dist::Zilla::Plugin::Author::Plicease::Upload - Upload dist to CPAN
 
 =head1 VERSION
 
-version 1.58
+version 1.59
 
 =head1 AUTHOR
 
