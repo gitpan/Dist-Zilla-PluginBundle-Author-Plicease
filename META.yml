@@ -6,10 +6,12 @@ build_requires:
   Module::Build: '0.3601'
   Test::DZil: '0'
   Test::More: '0.94'
+  perl: '5.008001'
 configure_requires:
   Module::Build: '0.3601'
-dynamic_config: 1
-generated_by: 'Dist::Zilla version 5.021, CPAN::Meta::Converter version 2.142690'
+  perl: '5.006'
+dynamic_config: '1'
+generated_by: 'Dist::Zilla version 5.024, CPAN::Meta::Converter version 2.142690'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -74,4 +76,4 @@ resources:
   bugtracker: https://github.com/plicease/Dist-Zilla-PluginBundle-Author-Plicease/issues
   homepage: http://perl.wdlabs.com/Dist-Zilla-PluginBundle-Author-Plicease
   repository: git://github.com/plicease/Dist-Zilla-PluginBundle-Author-Plicease.git
-version: '1.59'
+version: '1.60'

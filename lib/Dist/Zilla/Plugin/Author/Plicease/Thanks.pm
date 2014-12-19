@@ -7,7 +7,7 @@ with 'Dist::Zilla::Role::FileFinderUser' => {
 };
 
 # ABSTRACT: munge the AUTHOR section
-our $VERSION = '1.59'; # VERSION
+our $VERSION = '1.60'; # VERSION
 
 
 has original => (
@@ -89,7 +89,7 @@ Dist::Zilla::Plugin::Author::Plicease::Thanks - munge the AUTHOR section
 
 =head1 VERSION
 
-version 1.59
+version 1.60
 
 =head1 SYNOPSIS
 

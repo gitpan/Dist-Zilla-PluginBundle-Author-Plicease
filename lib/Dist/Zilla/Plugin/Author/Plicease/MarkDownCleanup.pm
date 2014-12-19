@@ -8,7 +8,7 @@ use warnings;
 use Moose;
 
 # ABSTRACT: add a travis status button to the README.md file
-our $VERSION = '1.59'; # VERSION
+our $VERSION = '1.60'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterBuild';
@@ -57,7 +57,7 @@ Dist::Zilla::Plugin::Author::Plicease::MarkDownCleanup - add a travis status but
 
 =head1 VERSION
 
-version 1.59
+version 1.60
 
 =head1 SYNOPSIS
 

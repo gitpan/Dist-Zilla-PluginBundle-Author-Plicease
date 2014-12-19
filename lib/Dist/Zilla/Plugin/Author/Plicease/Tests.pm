@@ -8,7 +8,7 @@ use File::Path qw( make_path );
 use Dist::Zilla::MintingProfile::Author::Plicease;
 
 # ABSTRACT: add author only release tests to xt/release
-our $VERSION = '1.59'; # VERSION
+our $VERSION = '1.60'; # VERSION
 
 
 with 'Dist::Zilla::Role::BeforeBuild';
@@ -200,7 +200,7 @@ Dist::Zilla::Plugin::Author::Plicease::Tests - add author only release tests to 
 
 =head1 VERSION
 
-version 1.59
+version 1.60
 
 =head1 SYNOPSIS
 

@@ -8,7 +8,7 @@ use YAML ();
 use Term::ANSIColor ();
 
 # ABSTRACT: Dist::Zilla plugin bundle used by Plicease
-our $VERSION = '1.59'; # VERSION
+our $VERSION = '1.60'; # VERSION
 
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -226,7 +226,7 @@ Dist::Zilla::PluginBundle::Author::Plicease - Dist::Zilla plugin bundle used by 
 
 =head1 VERSION
 
-version 1.59
+version 1.60
 
 =head1 SYNOPSIS
 

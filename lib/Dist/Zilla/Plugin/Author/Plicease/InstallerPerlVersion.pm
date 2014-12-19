@@ -5,7 +5,7 @@ use warnings;
 use Moose;
 
 # ABSTRACT: Make Makefile.PL and Build.PL exit instead of die on Perl version mismatch
-our $VERSION = '1.59'; # VERSION
+our $VERSION = '1.60'; # VERSION
 
 
 with 'Dist::Zilla::Role::InstallTool';
@@ -51,7 +51,7 @@ Dist::Zilla::Plugin::Author::Plicease::InstallerPerlVersion - Make Makefile.PL a
 
 =head1 VERSION
 
-version 1.59
+version 1.60
 
 =head1 SYNOPSIS
 
