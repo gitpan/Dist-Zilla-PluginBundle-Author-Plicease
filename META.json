@@ -4,13 +4,13 @@
       "Graham Ollis <perl@cpan.org>"
    ],
    "dynamic_config" : "1",
-   "generated_by" : "Dist::Zilla version 5.024, CPAN::Meta::Converter version 2.142690",
+   "generated_by" : "Dist::Zilla version 5.029, CPAN::Meta::Converter version 2.143240",
    "license" : [
       "perl_5"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
-      "version" : "2"
+      "version" : 2
    },
    "name" : "Dist-Zilla-PluginBundle-Author-Plicease",
    "no_index" : {
@@ -33,48 +33,25 @@
       },
       "runtime" : {
          "recommends" : {
-            "JSON::XS" : "0",
             "PerlX::Maybe::XS" : "0",
             "YAML::XS" : "0"
          },
          "requires" : {
             "Dist::Zilla" : "5.020",
-            "Dist::Zilla::File::FromCode" : "0",
-            "Dist::Zilla::File::InMemory" : "0",
             "Dist::Zilla::Plugin::AutoMetaResources" : "1.20",
+            "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0",
             "Dist::Zilla::Plugin::InstallGuide" : "1.200003",
             "Dist::Zilla::Plugin::MinimumPerl" : "1.003",
-            "Dist::Zilla::Plugin::NextRelease" : "5.020",
             "Dist::Zilla::Plugin::OurPkgVersion" : "0.005001",
             "Dist::Zilla::Plugin::PodWeaver" : "4.006",
             "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.142470",
             "Dist::Zilla::Plugin::Run::BeforeBuild" : "0.026",
-            "Dist::Zilla::Plugin::UploadToCPAN" : "0",
-            "Dist::Zilla::Role::AfterBuild" : "0",
-            "Dist::Zilla::Role::AfterMint" : "0",
-            "Dist::Zilla::Role::BeforeBuild" : "0",
-            "Dist::Zilla::Role::BeforeRelease" : "0",
-            "Dist::Zilla::Role::FileFinderUser" : "0",
-            "Dist::Zilla::Role::FileGatherer" : "0",
-            "Dist::Zilla::Role::FileMunger" : "0",
-            "Dist::Zilla::Role::InstallTool" : "0",
-            "Dist::Zilla::Role::MetaProvider" : "0",
-            "Dist::Zilla::Role::MintingProfile::ShareDir" : "0",
-            "Dist::Zilla::Role::ModuleMaker" : "0",
-            "Dist::Zilla::Role::PluginBundle::Easy" : "0",
-            "Dist::Zilla::Role::PrereqSource" : "0",
-            "Dist::Zilla::Role::TestRunner" : "0",
-            "Encode" : "0",
-            "File::Path" : "0",
             "File::chdir" : "0",
             "IPC::System::Simple" : "1.25",
-            "JSON" : "0",
-            "List::AllUtils" : "0",
+            "JSON::PP" : "0",
             "Moose" : "0",
             "Path::Class" : "0.31",
-            "Path::Class::File" : "0",
             "PerlX::Maybe" : "0.003",
-            "Term::ANSIColor" : "0",
             "Test::Fixme" : "0.14",
             "Test::Pod" : "1.44",
             "Test::Pod::Coverage" : "1.08",
@@ -82,13 +59,11 @@
             "YAML" : "0",
             "autodie" : "0",
             "namespace::autoclean" : "0",
-            "perl" : "5.008001",
-            "utf8" : "0"
+            "perl" : "5.008001"
          }
       },
       "test" : {
          "requires" : {
-            "Test::DZil" : "0",
             "Test::More" : "0.94",
             "perl" : "5.008001"
          }
@@ -106,6 +81,6 @@
          "web" : "https://github.com/plicease/Dist-Zilla-PluginBundle-Author-Plicease"
       }
    },
-   "version" : "1.60"
+   "version" : "1.61"
 }
 

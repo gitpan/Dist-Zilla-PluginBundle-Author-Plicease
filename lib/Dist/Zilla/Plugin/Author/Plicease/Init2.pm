@@ -4,11 +4,11 @@ use Moose;
 use Dist::Zilla::File::InMemory;
 use Dist::Zilla::File::FromCode;
 use Dist::Zilla::MintingProfile::Author::Plicease;
-use JSON qw( to_json );
+use JSON::PP qw( encode_json );
 use Encode qw( encode_utf8 );
 
 # ABSTRACT: Dist::Zilla initialization tasks for Plicease
-our $VERSION = '1.60'; # VERSION
+our $VERSION = '1.61'; # VERSION
 
 
 with 'Dist::Zilla::Role::AfterMint';
@@ -269,7 +269,7 @@ sub after_mint
       POST => "https://api.github.com/user/repos",
     );
     
-    my $data = to_json({ name => $self->zilla->name, description => $self->abstract });
+    my $data = encode_json({ name => $self->zilla->name, description => $self->abstract });
     $request->content($data);
     $request->header( 'Content-Length' => length encode_utf8 $data );
     $request->authorization_basic($self->github_login, $self->github_pass);
@@ -303,7 +303,7 @@ Dist::Zilla::Plugin::Author::Plicease::Init2 - Dist::Zilla initialization tasks 
 
 =head1 VERSION
 
-version 1.60
+version 1.61
 
 =head1 DESCRIPTION
 

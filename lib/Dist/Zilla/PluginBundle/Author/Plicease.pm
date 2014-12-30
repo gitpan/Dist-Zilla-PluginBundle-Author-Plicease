@@ -8,7 +8,7 @@ use YAML ();
 use Term::ANSIColor ();
 
 # ABSTRACT: Dist::Zilla plugin bundle used by Plicease
-our $VERSION = '1.60'; # VERSION
+our $VERSION = '1.61'; # VERSION
 
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -54,7 +54,8 @@ sub configure
 
   $self->add_plugins(
     'Author::Plicease::FiveEight',
-    'GatherDir',
+    ['GatherDir' => { exclude_filename => [qw( Makefile.PL Build.PL cpanfile )],
+                      exclude_match => '^_build/' }, ],
     [ PruneCruft => { except => '.travis.yml' } ],
     'ManifestSkip',
     'MetaYAML',
@@ -177,9 +178,19 @@ sub configure
     },
   ]);
   
-  $self->add_plugins([
+  $self->add_plugins(
     'Author::Plicease::SpecialPrereqs',
-  ]);
+    'CPANFile',
+  );
+
+  if($self->payload->{copy_mb})
+  {
+    $self->add_plugins([
+      'CopyFilesFromBuild' => {
+        copy => [ 'Build.PL', 'cpanfile' ],
+      },
+    ]);
+  }
   
   if(eval { require Dist::Zilla::Plugin::ACPS::RPM })
   { $self->add_plugins(qw( ACPS::RPM )) }
@@ -226,7 +237,7 @@ Dist::Zilla::PluginBundle::Author::Plicease - Dist::Zilla plugin bundle used by 
 
 =head1 VERSION
 
-version 1.60
+version 1.61
 
 =head1 SYNOPSIS
 
@@ -240,6 +251,10 @@ This Dist::Zilla plugin bundle is mostly equivalent to
 
  # Basic - UploadToCPAN, Readme, ExtraTests, and ConfirmRelease
  [GatherDir]
+ exclude_filename = Makefile.PL
+ exclude_filename = Build.PL
+ exclude_filename = cpanfile
+ exclude_match    = ^_build/
  [PruneCruft]
  except = .travis.yml
  [ManifestSkip]
@@ -288,6 +303,7 @@ This Dist::Zilla plugin bundle is mostly equivalent to
  Test::More = 0.94
  
  [SpecialPrereqs]
+ [CPANFile]
 
 Some exceptions:
 
@@ -357,6 +373,14 @@ Set the GitHub repo name to something other than the dist name.
 =head2 github_user
 
 Set the GitHub user name.
+
+=head2 copy_mb
+
+Copy Build.PL and cpanfile from the build into the git repository.
+Exclude them from gather.
+
+This allows other developers to use the dist from the git checkout, without needing
+to install L<Dist::Zilla> and L<Dist::Zilla::PluginBundle::Author::Plicease>.
 
 =head1 SEE ALSO
 

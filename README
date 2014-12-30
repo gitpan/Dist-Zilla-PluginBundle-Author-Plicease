@@ -5,7 +5,7 @@ NAME
 
 VERSION
 
-    version 1.60
+    version 1.61
 
 SYNOPSIS
 
@@ -19,6 +19,10 @@ DESCRIPTION
 
      # Basic - UploadToCPAN, Readme, ExtraTests, and ConfirmRelease
      [GatherDir]
+     exclude_filename = Makefile.PL
+     exclude_filename = Build.PL
+     exclude_filename = cpanfile
+     exclude_match    = ^_build/
      [PruneCruft]
      except = .travis.yml
      [ManifestSkip]
@@ -67,6 +71,7 @@ DESCRIPTION
      Test::More = 0.94
      
      [SpecialPrereqs]
+     [CPANFile]
 
     Some exceptions:
 
@@ -129,6 +134,15 @@ OPTIONS
  github_user
 
     Set the GitHub user name.
+
+ copy_mb
+
+    Copy Build.PL and cpanfile from the build into the git repository.
+    Exclude them from gather.
+
+    This allows other developers to use the dist from the git checkout,
+    without needing to install Dist::Zilla and
+    Dist::Zilla::PluginBundle::Author::Plicease.
 
 SEE ALSO
 
