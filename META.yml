@@ -51,4 +51,4 @@ resources:
   bugtracker: https://github.com/plicease/Dist-Zilla-PluginBundle-Author-Plicease/issues
   homepage: http://perl.wdlabs.com/Dist-Zilla-PluginBundle-Author-Plicease
   repository: git://github.com/plicease/Dist-Zilla-PluginBundle-Author-Plicease.git
-version: '1.61'
+version: '1.62'

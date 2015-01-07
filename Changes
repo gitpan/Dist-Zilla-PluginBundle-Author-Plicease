@@ -1,5 +1,8 @@
 Revision history for Dist-Zilla-PluginBundle-Author-Plicease
 
+1.62      2015-01-07 14:47:05 -0500
+  - escape < and > in AUTHOR / thanks section
+
 1.61      2014-12-30 13:56:48 -0500
   - Make CPANFile part of the default [@Author::Plicease]
   - added copy_mb option
